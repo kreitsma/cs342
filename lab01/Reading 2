@@ -1,0 +1,37 @@
+Chapter 5 (focus primarily on Sections 5.1–5.2)
+
+Who invented the relational data model? When and where did they do their work?
+
+	Ted Codd of IBM Research invented the relational data model in 1970. He wrote a paper on it which attracted immediate attention.	
+
+Explain the following terms:
+relation
+	A set of tuples (d1, d2 … dn) where each element dj is a member of Dj, a data domain (Wikipedia)
+attribute
+	a name paired with a domain (column)
+domain
+	all the values which a data element can contain.
+n-tuple
+	An ordered set of n values (row)
+NULL value
+	The values of attributes that may be unknown or may not apply to a tuple
+primary, foreign, candidate and super keys
+	Primary Key – a candidate key whose values are used to identify tuples in the relation
+	Candidate Key – Any column that can qualify as a unique key
+	Super Key – A set of attributes where there are no two distinct tuples that have identical values.
+referenced and referencing records
+	Referenced –  Relation referenced by a referencing relation – see below
+	Referencing – Contains a foreign key that references another relation only if the attributes in the foreign key have the same domain as the primary key attributes in the referenced relation, and a value of FK in a tuple t occurs as a value of PK in the other relation.
+
+Are tuples in a relation ordered? How about attribute values in a tuple? Explain why or why not.
+
+	They are not; Mathematically, elements of a set have no order among them, so tuples do not have order. Attribute values are ordered, as an n-tuple is an ordered list of n values; however, it is not as important that they are ordered so long as correspondence between attributes and values is maintained.
+
+Can attributes have multiple values in a single n-tuple? Why or why not?
+
+No, they cannot; each value is an atomic value, meaning it is not divisible into components—having multiple values would violate this.
+
+Chapter 6 (focus primarily on Sections 6.1–6.2 & 6.4) — Make sure that you know how to:
+Create tables with specified constraints, including primary/foreign key, not-null, domain and value-check constraints.
+Use the DML commands: INSERT, DELETE and UPDATE.
+Distinguish the ON DELETE actions: SET NULL; CASCADE.
