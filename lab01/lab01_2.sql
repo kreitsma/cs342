@@ -1,3 +1,0 @@
---Dual is a dummy table used for system functions in a select statement when the user is not actually
---interested in the data. One example would be 'select sysdate from dual;', which would return the current
---date and time of the OS that the database is on; the data from the table is ignored.

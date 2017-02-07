@@ -1,4 +1,4 @@
-Chapter 5 (focus primarily on Sections 5.1â€“5.2)
+Chapter 5 (focus primarily on Sections 5.1–5.2)
 
 Who invented the relational data model? When and where did they do their work?
 
@@ -6,7 +6,7 @@ Who invented the relational data model? When and where did they do their work?
 
 Explain the following terms:
 relation
-	A set of tuples (d1, d2 â€¦ dn) where each element dj is a member of Dj, a data domain (Wikipedia)
+	A set of tuples (d1, d2 … dn) where each element dj is a member of Dj, a data domain (Wikipedia)
 attribute
 	a name paired with a domain (column)
 domain
@@ -16,12 +16,12 @@ n-tuple
 NULL value
 	The values of attributes that may be unknown or may not apply to a tuple
 primary, foreign, candidate and super keys
-	Primary Key â€“ a candidate key whose values are used to identify tuples in the relation
-	Candidate Key â€“ Any column that can qualify as a unique key
-	Super Key â€“ A set of attributes where there are no two distinct tuples that have identical values.
+	Primary Key – a candidate key whose values are used to identify tuples in the relation
+	Candidate Key – Any column that can qualify as a unique key
+	Super Key – A set of attributes where there are no two distinct tuples that have identical values.
 referenced and referencing records
-	Referenced â€“  Relation referenced by a referencing relation â€“ see below
-	Referencing â€“ Contains a foreign key that references another relation only if the attributes in the foreign key have the same domain as the primary key attributes in the referenced relation, and a value of FK in a tuple t occurs as a value of PK in the other relation.
+	Referenced –  Relation referenced by a referencing relation – see below
+	Referencing – Contains a foreign key that references another relation only if the attributes in the foreign key have the same domain as the primary key attributes in the referenced relation, and a value of FK in a tuple t occurs as a value of PK in the other relation.
 
 Are tuples in a relation ordered? How about attribute values in a tuple? Explain why or why not.
 
@@ -29,9 +29,9 @@ Are tuples in a relation ordered? How about attribute values in a tuple? Explain
 
 Can attributes have multiple values in a single n-tuple? Why or why not?
 
-No, they cannot; each value is an atomic value, meaning it is not divisible into componentsâ€”having multiple values would violate this.
+No, they cannot; each value is an atomic value, meaning it is not divisible into components—having multiple values would violate this.
 
-Chapter 6 (focus primarily on Sections 6.1â€“6.2 & 6.4) â€” Make sure that you know how to:
+Chapter 6 (focus primarily on Sections 6.1–6.2 & 6.4) — Make sure that you know how to:
 Create tables with specified constraints, including primary/foreign key, not-null, domain and value-check constraints.
 Use the DML commands: INSERT, DELETE and UPDATE.
 Distinguish the ON DELETE actions: SET NULL; CASCADE.

@@ -1,0 +1,49 @@
+Chapter 1
+Compare and contrast data, databases, database (management) systems and information systems.
+A database is a collection of related data; data are known facts that can be recorded and have implicit
+meaning. Therefore, a database contains data. A database management system is a computerized
+system that enables users to create and maintain a database. Information systems are made up of
+various computers, storage systems, application software, and databases, and are maintained by IT
+departments—they have value to the organization. Essentially, the hierarchy of containment is
+Information System -> Database management system -> Database -> Data.
+Compare and contrast database systems with the following, using the main characteristics of the
+database approach in your discussion.
+-data structures and algorithms
+Data structures and algorithms are not committed to persistent storage like databases are—
+once the program stops running, the data is gone. Databases allow for persistent storage, making them
+optimal for long-term use. Databases are also self-describing, and they separate data from programs.
+They can also have multiple views, for the stakeholders, users, and security.
+-traditional file systems
+In traditional file systems, each user defines and implements the files needed for a specific
+software application as part of programming the application. It is redundant as each user may need
+access to the same data, which would be replicated for each user. Databases allow simultaneous access
+in order to avoid wasting memory/space.
+Identify the stakeholders of database systems.
+One is the database administrator, who is responsible for authorizing access to the database,
+coordinating and monitoring its use, and acquiring software and hardware resources as needed. The
+database designer are responsible for identifying the data to be stored in the database and for choosing
+appropriate structures to represent and store this data. Then there are the end users—casual
+(occasionally access database, but may need different information each time), naïve or parametric (use
+standard queries that have been carefully programmed and tested), sophisticated (thoroughly
+familiarize themselves with the database), and standalone (use ready-made program packages that
+provide GUIs).
+Chapter 2
+Explain the significance of the categories of data models. Which type of model is displayed in Figure
+2.1?
+One category is conceptual data modules, which are close to the way that users perceive data. On the
+other extreme, there is physical data models, which describe the details of how data is stored on the
+computer storage media. The median between these two is representational data models, which are 
+understood by users but closer to how data is stored than conceptual. Figure 2.1 is a representational
+data model, as the names are easily understood, yet use underscores to denote spaces.
+Explain the structure and significance of the three-schema architecture.
+There are three levels: 1) The internal level (internal schema), which describes the physical storage
+structure of the database; 2) The conceptual level (conceptual schema), which describes the structure of
+the whole database for a community of users; 3) The external level (external schemas), where each
+external schema describes the part of the database that a particular user is interested in and hides the
+rest of the database from them. The goal of this is to separate the user applications from the physical
+database.
+Explain the tiers used in a typical web-based information system.
+The top tier is the presentation layer, which is viewed by the client and is typically a GUI or web
+interface. The second tier is the business logic layer, containing the application or web server which
+serves up application programs or webpages. The final tier is the database services layer, which contains
+the database server (and by extension the database management system).
