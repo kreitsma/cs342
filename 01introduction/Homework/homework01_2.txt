@@ -1,0 +1,6 @@
+2.13
+College(ID, Name, Mascot)
+Course(College_ID, Semester_offered, Dept, Number, Title, Num_credits)
+Section(ID, Course_Number, College_ID, Letter, Professor_name, Start_time, End_time, Days_meeting)
+Student(ID, Name, College_ID)
+Student_class(Student_ID, Section_ID)

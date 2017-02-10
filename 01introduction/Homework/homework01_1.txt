@@ -1,0 +1,4 @@
+1.14
+a. Major, Course_number, Department, Prerequisite_number
+b. You would split the Course_number into two parts: Course_dept (e.g. CS) and Course_num (e.g. 1310). 
+This would take place in all three of the tables (Course, Section, Prerequisite), and in the Prerequisite table, Prerequisite_number would also be split into Prerequisite_dept and Prerequisite_num.
