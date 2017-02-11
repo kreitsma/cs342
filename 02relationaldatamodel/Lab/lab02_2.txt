@@ -1,0 +1,4 @@
+a. CHECK ((score IS NULL) OR (votes>1000));
+b. You might want to if you are changing the format of a primary key and the foreign keys of a 
+separate table; for instance, if you need to impose a restriction on non-alphanumeric characters, you would 
+want to alter the table separately.
