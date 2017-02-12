@@ -1,0 +1,26 @@
+Read Chapter 3.
+Compare and contrast the database and the software design processes. Are agile modeling practices applicable to database design as well?
+Applications with software and a database require design, implementation, and testing. The design and testing phases have been considered to be software engineering rather than database design. To a certain extent, agile modeling processes are applicable to database design, as they share many core concepts, such as envisioning the requirements, having an architectural vision, implementing a data model, and testing thoroughly. 
+Explain the following terms: entities, relationships (including cardinality and participation constraints), attributes (simple, composite, multi-valued and derived).
+Entity: a thing or object in the real world with an independent existence
+Relationship: A attribute of an entity that describes another entity. A participation constraint tells if the existence of an entity depends on its relationship to another entity via the relationship type. The minimum cardinality constraint specifies the minimum amount of relationship instances that each entity must have. 
+Attributes: particular properties that describe an entity. If they are not divisible, they are called simple (atomic) attributes; if they are, they are called composite. If an attribute can have different numbers of values, it is called multivalued. If an attribute is inferred from other attribute(s) (e.g. an Age attribute can come from a Birth_date and today’s date), it is a derived attribute.
+Explain weak entities and identifying relationships.
+Weak entities are entities that do not have key attributes of their own. The identifying relationship relates a weak entity type to its owner, the identifying type.
+Model a person-household database (from class 2) using an ERD.
+See uploaded image.
+Skim the material in Section 3.8 on UML diagrams; we won’t use it here but we have addressed it in CS 262 and will review it in unit 11.
+
+Note the ERD reference sheet in Figure 3.14.
+
+Read Chapter 9.
+Map the ERD model from above to a relational database model.
+See uploaded image.
+Explain how to map from a UML model to a relational database model. We will address this issue more carefully in a later unit (on object-relational mapping).
+1. Map regular entity types
+2. Map weak entity types
+3. Map binary 1:1 relationship types
+4. Map binary 1:N relationship types
+5. Map binary M:N relationship types
+6. Map multivalued attributes
+7. Map N-ary Relationship types
