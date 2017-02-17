@@ -27,14 +27,17 @@ create table Person (
 	firstName varchar(15),
 	lastName varchar(15),
 	membershipStatus char(1) CHECK (membershipStatus IN ('m', 'a', 'c')),
-	role varchar(15) CHECK (houseHoldID IS NOT NULL),
+	role varchar(15),
 	FOREIGN KEY houseHoldID REFERENCES HouseHold(ID) ON DELETE SET NULL,
 	FOREIGN KEY homeGroupID REFERENCES HomeGroup(ID) ON DELETE SET NULL
 	);
 
+alter table Person add constraint house_role --If a person has a role they must be in a household
+CHECK ((role IS NULL) OR (houseHoldID IS NOT NULL)); 
+	
 create table Mentorship (
-	mentorID integer,
-	menteeID integer PRIMARY KEY,
+	mentorID integer PRIMARY KEY,
+	menteeID integer, 
 	FOREIGN KEY mentorID REFERENCES Person(ID) ON DELETE CASCADE,
 	FOREIGN KEY menteeID REFERENCES Person(ID) ON DELETE CASCADE
 	);
