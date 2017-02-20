@@ -1,0 +1,48 @@
+Read Chapter 14 (focus primarily on Sections 14.1-2, 14.3.1-3, 14.5-6) — It’s ok to submit rather fuzzy or even empty answers on the material specifically marked for Wednesday’s discussion.
+Explain the four informal guidelines discussed in Section 14.1.
+	1. A relation schema should be designed so that it is easy to explain its meaning. This means that one should
+	not combine attributes from multiple entity types and relationship types into a single relation.
+	2. Base relation schemas should be designed so that no insertion, deletion or modification anomalies are present in the 
+	relations. If there are anomalies, there need to be checks in the programs that communicate with the database.
+	3. Avoid putting attributes in a base relation that will frequently be NULL, as this does not use space 
+	efficiently. Rather, an intermediary table should be used.
+	4. Relational schemas should be designed so that they can be joined on attributes that are appropriately
+	related (primary key, foreign key) pairs so that no false tuples are generated.
+	
+Explain the terms functional dependency (for Monday, see Section 14.2) and multi-valued dependency (for Wednesday, see Section 14.6) by giving an example of each and showing how it satisfies the term’s formal definition.
+	A Functional Dependency serves as a constraint between two sets of attributes from the database. Given a relation 
+	R where set of attributes X -> Y (is a functional dependency) if and only if each X values is associated with precisely
+	one Y values. One example that the book gives is for an Employee_Project Table, an SSN is a functional dependency for an 
+	Employee Name because each SSN is associated with exactly one Employee name.
+	A Multivalued Dependency is also a constraint between two sets of attributes. Simply put, a table has a multivalued
+	dependency if there are two or more fields that are dependent on another field but not dependent on each other.
+	EXAMPLE
+	
+Review the formal definitions of these terms: superkey; key (see Section 14.3.3).
+	A superkey is a combination of keys that combine to form a unique identifier. A key is an identifier for a table.
+	
+Explain BCNF (for Monday, see Section 14.5) and 4NF (for Wednesday, see Section 14.6) by giving an example relation and proving whether its schema conforms (or fails to conform) to the definitions of each normal form.
+	BCNF (Boyce-Codd Normal Form) is a form of normalization where all redundancy based on functional dependency is 
+	removed. If a nontrivial functional dependency X -> A holds in R and X is a superkey of R, then it is in BCNF form. EXAMPLE:
+	
+	Court	 Start Time	End Time	Rate Type
+	1			09:30	10:30		SAVER
+	1			11:00	12:00		SAVER
+	1			14:00	15:30		STANDARD
+	2			10:00	11:30		PREMIUM-B
+	2			11:30	13:30		PREMIUM-B
+	2			15:00	16:30		PREMIUM-A
+
+	This table is not in BCNF because in the dependency Rate Type -> Court, Rate Type is not a candidate key nor a member
+	of a superkey.
+	
+Explain when one would one want to normalize a relational schema and when one might want to de-normalize one.
+	It's a good idea to normalize when you want your database to be free of side effects when you update, insert, and 
+	delete. Not normalizing your database can result in the same information expressed in multiple rows (update anomaly),
+	not letting facts be recorded at all (insertion anomaly), or data accidentally being deleted (deletion anomaly). Another
+	reason is that normalized databases are easier to redesign when they are extended.
+	A de-normalized database is better only in rare conditions. Typically, they are used when storing immutable data, like
+	price lists. A de-normalized database is quicker than a normalized one because a normalized database is usually split
+	into many different tables, requiring multiple joins. De-normalized ones can be reduced significantly, which does waste
+	space (there are a lot of NULL values), but allows for quicker access.
+Review Section 15.1.1 well enough to be able to define Armstrong’s axioms (IR1–3) and closures.
