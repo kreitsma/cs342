@@ -16,7 +16,21 @@ Explain the terms functional dependency (for Monday, see Section 14.2) and multi
 	Employee Name because each SSN is associated with exactly one Employee name.
 	A Multivalued Dependency is also a constraint between two sets of attributes. Simply put, a table has a multivalued
 	dependency if there are two or more fields that are dependent on another field but not dependent on each other.
-	EXAMPLE
+	Here is an example from Wikipedia:
+	
+	University courses
+Course	Book			Lecturer
+AHA	Silberschatz	John D
+AHA	Nederpelt		John D
+AHA	Silberschatz	William M
+AHA	Nederpelt		William M
+AHA	Silberschatz	Christian G
+AHA	Nederpelt		Christian G
+OSO	Silberschatz	John D
+OSO	Silberschatz	William M
+
+	In this table, the lecturers and books are attached to the course but are independent of each other. It has multivalued
+	dependency because if we added a book to the AHA course, we would have to add a record for each lecturer of that course.
 	
 Review the formal definitions of these terms: superkey; key (see Section 14.3.3).
 	A superkey is a combination of keys that combine to form a unique identifier. A key is an identifier for a table.
@@ -33,8 +47,35 @@ Explain BCNF (for Monday, see Section 14.5) and 4NF (for Wednesday, see Section 
 	2			11:30	13:30		PREMIUM-B
 	2			15:00	16:30		PREMIUM-A
 
+	(Wikipedia)
 	This table is not in BCNF because in the dependency Rate Type -> Court, Rate Type is not a candidate key nor a member
 	of a superkey.
+	
+	4NF is a step higher than BCNF. It is similar to the definition of BCNF, except it replaces "functional dependency" with
+	"multivalued dependency"; for every nontrivial multivalued dependency X ->> Y, X is a superkey--a candidate key or
+	a superset of a candidate key. EXAMPLE:
+	
+	Pizza Delivery Permutations
+Restaurant	Pizza Variety	Delivery Area
+A1 Pizza		Thick Crust		Springfield
+A1 Pizza		Thick Crust		Shelbyville
+A1 Pizza		Thick Crust		Capital City
+A1 Pizza		Stuffed Crust	Springfield
+A1 Pizza		Stuffed Crust	Shelbyville
+A1 Pizza		Stuffed Crust	Capital City
+Elite Pizza	Thin Crust		Capital City
+Elite Pizza	Stuffed Crust	Capital City
+Vincenzo's 	Thick Crust		Springfield
+Vincenzo's 	Thick Crust		Shelbyville
+Vincenzo's 	Thin Crust		Springfield
+Vincenzo's 	Thin Crust		Shelbyville
+
+In this example, each given restaurant can deliver a certain type of pizza to a certain area. It meets BCNF because its
+only key is the superkey of all three columns together. However, there are two multivalued dependencies
+Restaurant ->> Pizza Variety
+Restaurant ->> Delivery Area
+and since Restaurant by itself is not a superkey, it is not in 4NF.
+
 	
 Explain when one would one want to normalize a relational schema and when one might want to de-normalize one.
 	It's a good idea to normalize when you want your database to be free of side effects when you update, insert, and 
