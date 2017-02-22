@@ -1,0 +1,7 @@
+1. a. A flight describes the general information regarding a particular flight that occurs on certain days of the week. A 
+	Flight Leg is a segment of a flight; if it is a direct flight, then there is only one leg, but a flight may have layovers. A
+	Leg Instance is a particular instance of a Flight Leg which holds data for that specific instance, like the date and 
+	number of available seats.
+	b. The dashed underline is specific to weak entities--it is a partial key, meaning it cannot by itself identify an entity.
+	c. They did it this way so that it would be possible for someone to reserve multiple seats on the same flight (e.g., a father 
+	buys tickets for his whole family).	
