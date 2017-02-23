@@ -35,13 +35,6 @@ create table Person (
 alter table Person add constraint house_role --If a person has a role they must be in a household
 CHECK ((role IS NULL) OR (houseHoldID IS NOT NULL)); 
 	
-create table Mentorship (
-	mentorID integer PRIMARY KEY,
-	menteeID integer, 
-	FOREIGN KEY mentorID REFERENCES Person(ID) ON DELETE CASCADE,
-	FOREIGN KEY menteeID REFERENCES Person(ID) ON DELETE CASCADE
-	);
-	
 create table Team (
 	ID integer PRIMARY KEY,
 	name varchar(20),
@@ -59,6 +52,14 @@ create table PersonTeam (
 create table HomeGroup (
 	ID integer PRIMARY KEY,
 	name varchar(50)
+	);
+	
+create table Request (
+	rDate date,
+	text varchar(200),
+	rAccess varchar(1),
+	response varchar(200),
+	
 	);
 
 
