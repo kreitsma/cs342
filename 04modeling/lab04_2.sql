@@ -42,6 +42,12 @@ WHERE pt.personName = pv.personName;
 --There are no functional dependencies. Therefore, the relations are in BCNF.
 --Multivalued Dependencies:
 --personName ->-> teamName, personVisit
+--This relation is in both BCNF and 4NF as the LHS of all Multivalued Dependencies are candidate keys.
+--
+--c. They are not equally aprropriate. The two tabled version is better, despite not being in 4NF, as it allows a person to be on 
+--multiple teams without creating redundant rows. I guess the joined tables would be slightly faster is you would have direct access to
+--the attributes, but it is still not good design.
+--
 --
 
 
