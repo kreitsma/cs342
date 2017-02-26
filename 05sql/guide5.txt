@@ -1,0 +1,8 @@
+1. a. SELECT P.firstName, P.lastName FROM Performer AS P WHERE P.id = 1;
+	b. SELECT firstName FROM Performers UNION SELECT title FROM Movie;
+
+2. a. SELECT title FROM Movie WHERE score IS NULL;
+	b. SELECT title FROM Movie WHERE score > ALL (SELECT score FROM Movie WHERE year > 2016);
+		- Selects all movies with a higher score than all the movies made since 2016.
+	c. SELECT title FROM Movie AS M WHERE score > (SELECT AVG(score) FROM Movies WHERE year = M.year);
+		- Selects all movies that have a rating higher than the average rating in the year they were released.
