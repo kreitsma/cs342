@@ -44,11 +44,29 @@ WHERE pt.personName = pv.personName;
 --personName ->-> teamName, personVisit
 --This relation is in both BCNF and 4NF as the LHS of all Multivalued Dependencies are candidate keys.
 --
---c. They are not equally aprropriate. The two tabled version is better, despite not being in 4NF, as it allows a person to be on 
+--c. They are not equally appropriate. The two tabled version is better, despite not being in 4NF, as it allows a person to be on 
 --multiple teams without creating redundant rows. I guess the joined tables would be slightly faster is you would have direct access to
 --the attributes, but it is still not good design.
 --
---
+--d. (Homework)
+
+CREATE TABLE ViewQuery (
+	personName varchar(10),
+	teamName varchar(10),
+	personVisit varchar(10),
+	);
+
+INSERT INTO ViewQuery SELECT pt.personName, pt.teamName, pv.personVisit
+FROM PersonTeam pt, PersonVisit pv
+WHERE pt.personName = pv.personName;
+
+
+
+
+
+
+
+
 
 
 

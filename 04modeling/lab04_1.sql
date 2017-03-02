@@ -57,18 +57,29 @@ CREATE TABLE NewAltPerson (
 CREATE TABLE AltPersonTeam (
 	PersonID integer,
 	TeamID integer,
-	TeamRole varchar(10),
+	teamRole varchar(10),
 	FOREIGN KEY PersonID REFERENCES AltPerson(PersonID) ON DELETE CASCADE,
 	FOREIGN KEY TeamID REFERENCES Team(TeamID) ON DELETE CASCADE
 	);
 	
 CREATE TABLE Team (
-	TeamID integer PRIMARY KEY,
-	TeamName varchar(10),
-	TeamTime varchar(10)
+	teamID integer PRIMARY KEY,
+	teamName varchar(10),
+	teamTime varchar(10)
 	);
 
+INSERT INTO NewAltPerson SELECT DISTINCT PersonID, name, status, mentorName, mentorStatus FROM AltPerson;
+INSERT INTO AltPersonTeam SELECT DISTINCT PersonID, teamRole FROM AltPerson; --We'd have to make TeamID's ourselves
+INSERT INTO Team SELECT DISTINCT teamName, teamTime FROM AltPerson;
 
+SELECT * FROM NewAltPerson;
+SELECT * FROM AltPersonTeam;
+SELECT * FROM Team;
+
+--Display old table:
+SELECT p.PersonID, p.name, p.status, p.mentorId, p.mentorName, p.mentorStatus, pt.teamRole, t.teamName, t.teamTime
+	FROM NewAltPerson p, AltPersonTeam, Team
+	WHERE p.PersonID = pt.PersonID AND pt.TeamID = t.teamID;
 
 
 	

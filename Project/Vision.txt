@@ -7,3 +7,5 @@ to get a sufficient amount of data.
 was nominated for, or perhaps also to see all the nominees of each category. There could even be categories
 and subcategories, e.g. an 'Albums' category containing 'Best Rock Album', 'Best Alternative Album', and so 
 forth. That way, the user could see everything across all of the 'Albums' category. 
+	In addition, I will add the ability to let students vote for what they think should win each category for each year. 
+This could be a fun interactive thing for students, and I could compare what the students vote for to what actually won.
