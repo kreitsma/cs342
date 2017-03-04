@@ -1,0 +1,15 @@
+	I got the data for this database from www.grammy.com. However, that site only contains detailed data from this 
+year's Grammys; fortunately, Wikipedia contains detailed records from Grammys in years past. I also have had to use Wikipedia 
+to look up the real names of some producers.
+	My chosen normal form is 4NF. I basically had to choose this by default; since this database contains many tables
+that do not have many attributes (but are linked by many intermediary tables), there is only one functional dependency,
+and there are no multivalued dependencies. While this does make my access time a bit slower, it was necessary to create
+all of these separate tables because of the many possibilities that multiple entities have to be linked to one another.
+	My schema is in 4NF. The functional dependencies are:
+	Person.nickName -> Person.fName, Person.lName
+	It is trivial to mention the primary key ID's of each table, as by their nature being primary keys they satisfy the LHS 
+		specification for BCNF.
+	Person.nickName is a candidate key; therefore, this relation is in BCNF.
+	There are no multivalued dependencies. Therefore, this relation is in 4NF.
+	
+	

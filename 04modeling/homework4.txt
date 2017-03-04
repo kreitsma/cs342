@@ -4,13 +4,14 @@
 			Book(Book_title, Author_name)
 			Book2(Book_title, Publisher, Book_type, List_price)
 			Book3(Author_name, Author_affil)
-			
+			This eliminates a few of the dependiencies.
 			
 			2nd decomposition:
 			Book(Book_title, Authorname)
 			Book2(Book_title, Publisher, Book_type)
 			Book2-2(Book_type, Listprice)
 			Book3(Authorname, Author_affil)
+			This eliminates the dependencies in Book2.
 
 14.35 a. The candidate key(s) is {Book_Name, Author, Edition} or any superclass of it.
 		b. For each book, one knows that there is a certain amount of authors there can be; in this instance, the only two
