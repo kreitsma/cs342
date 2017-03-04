@@ -1,0 +1,11 @@
+For my database, I will make a database of all of the 2017 Grammy Award Nominees. I will have several tables,
+including Award, Artist, Album, Label, Producer, Performer, Engineer, and so on. I will need many intermediary tables,
+as there are several people that are up for multiple nominations in multiple different roles. If there is not enough
+data using this year alone, I could even extend the parameters to the past 5, 10, or x number of years in order
+to get a sufficient amount of data.
+	The users would be able to query the database in order to find all of the awards that a specific artist or album
+was nominated for, or perhaps also to see all the nominees of each category. There could even be categories
+and subcategories, e.g. an 'Albums' category containing 'Best Rock Album', 'Best Alternative Album', and so 
+forth. That way, the user could see everything across all of the 'Albums' category. 
+	In addition, I will add the ability to let students vote for what they think should win each category for each year. 
+This could be a fun interactive thing for students, and I could compare what the students vote for to what actually won.
