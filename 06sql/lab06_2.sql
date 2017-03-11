@@ -7,5 +7,11 @@ SELECT AVG(TRUNC((MONTHS_BETWEEN(SYSDATE, birthdate)) / 12)) FROM Person;
 --the entire table together.
 
 --b.
-SELECT HouseHold.ID, COUNT(Person.*) FROM HouseHold, Person WHERE HouseHold.city = "Grand Rapids"
-	AND COUNT
+SELECT HouseHold.ID, COUNT(Person.*) AS people FROM HouseHold, Person WHERE HouseHold.city = "Grand Rapids"
+	AND Person.householdID = HouseHold.ID GROUP BY HouseHold.ID HAVING COUNT(Person.ID) >= 2
+	ORDER BY people DESC;
+	
+--c.
+SELECT HouseHold.ID, COUNT(Person.*), HouseHold.phoneNumber AS people FROM HouseHold, Person WHERE HouseHold.city = "Grand Rapids"
+	AND Person.householdID = HouseHold.ID GROUP BY HouseHold.ID HAVING COUNT(Person.ID) >= 2
+	ORDER BY people DESC;
