@@ -5,9 +5,6 @@
 create table Album (
 	ID integer PRIMARY KEY,
 	ArtistID integer,
-	AlbumofYear varchar(1),
-	BestRockAlbum varchar(1),
-	BestScore varchar(1),
 	name varchar(100),
 	yearNominated integer,
 	FOREIGN KEY ArtistID REFERENCES Artist(ID) ON DELETE CASCADE,
@@ -22,10 +19,6 @@ create table Label (
 create table Song (
 	ID integer PRIMARY KEY,
 	AlbumID integer,
-	RecordofYear varchar(1),
-	SongofYear varchar(1),
-	BestPopSoloPerformance varchar(1),
-	BestRockSong varchar(1),
 	title varchar(50),
 	yearNominated integer,
 	FOREIGN KEY AlbumID REFERENCES Album(ID) ON DELETE CASCADE,
@@ -40,7 +33,6 @@ create table Publisher (
 	
 create table Artist (
 	ID integer PRIMARY KEY,
-	BestNewArtist varchar(1),
 	name varchar(100),
 	);
 	
@@ -49,14 +41,38 @@ create table Person (
 	fName varchar(30),
 	lName varchar(50),
 	nickName varchar(50)
+	
+	
+create table Award ( --Get rid of ID and make year and category a super primary key?
+	ID integer PRIMARY KEY,
+	category varchar(50),
+	yearReceived year,
+	winner varchar(7) --'winner' or 'nominee'
+	AlbumID integer,
+	SongID integer,
+	ArtistID integer,
+	FOREIGN KEY AlbumID REFERENCES Album(ID) ON DELETE CASCADE,
+	FOREIGN KEY SongID REFERENCES Song(ID) ON DELETE CASCADE,
+	FOREIGN KEY ArtistID REFERENCES Artist(ID) ON DELETE CASCADE
+	);
+	
+create table AwardCategories (
+	name varchar(50)
 	);
 	
 --Intermediary tables
 	
 create table AlbumLabel (
-	AlbumID integer
+	AlbumID integer,
 	LabelID integer NOT NULL,
 	FOREIGN KEY AlbumID REFERENCES Album(ID) ON DELETE CASCADE,
+	FOREIGN KEY LabelID REFERENCES Label(ID) ON DELETE CASCADE
+	);
+	
+create table SongLabel (
+	SongID integer,
+	LabelID integer NOT NULL,
+	FOREIGN KEY SongID REFERENCES Song(ID) ON DELETE CASCADE,
 	FOREIGN KEY LabelID REFERENCES Label(ID) ON DELETE CASCADE
 	);
 	
@@ -67,7 +83,7 @@ create table PublisherSong (
 	FOREIGN KEY PublisherID REFERENCES Publisher(ID) ON DELETE CASCADE
 	); 
 
-create table 	AlbumPerson (
+create table AlbumPerson (
 	AlbumID integer,
 	PersonID integer,
 	role varchar(10), --Mixer, Engineer, Producer, Performer, etc.
@@ -86,11 +102,10 @@ create table SongPerson (
 create table ArtistSong (
 	ArtistID integer,
 	SongID integer,
+	role varchar(20),
 	FOREIGN KEY ArtistID REFERENCES Artist(ID) ON DELETE CASCADE,
 	FOREIGN KEY SongID REFERENCES Song(ID) ON DELETE CASCADE
 	);
-	
-
 	
 --Student table
 create table Student (

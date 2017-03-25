@@ -1,12 +1,13 @@
 --Data
 
-INSERT INTO Album VALUES (1, 1, 'w', null, null, '25', 2016);
-INSERT INTO Album VALUES (2, 2, null, null, null, 'Blackstar', 2016);
-INSERT INTO Album VALUES (3, 3, null, 'n', null, 'Death of a Bachelor', 2016);
-INSERT INTO Album VALUES (4, 4, null, null, null, 'Blurryface', 2016);
-INSERT INTO Album VALUES (5, null, null, null, 'w', 'Star Wars: The Force Awakens', 2016);
-INSERT INTO Album VALUES (6, 6, null, null, null, 'Dangerous Woman', 2016);
-INSERT INTO Album VALUES (7, 7, 'n', null, null, 'Lemonade', 2016);
+INSERT INTO Album VALUES (1, 1, '25', 2016);
+INSERT INTO Album VALUES (2, 2, 'Blackstar', 2016);
+INSERT INTO Album VALUES (3, 3, 'Death of a Bachelor', 2016);
+INSERT INTO Album VALUES (4, 4, 'Blurryface', 2016);
+INSERT INTO Album VALUES (5, null, 'Star Wars: The Force Awakens', 2016);
+INSERT INTO Album VALUES (6, 6, 'Dangerous Woman', 2016);
+INSERT INTO Album VALUES (7, 7, 'Lemonade', 2016);
+INSERT INTO Album VALUES (8, 8, 'Lukas Graham', 2016);
 
 INSERT INTO Label VALUES (1, 'Columbia Records');
 INSERT INTO Label VALUES (2, 'ISO');
@@ -16,21 +17,28 @@ INSERT INTO Label VALUES (5, 'XL Recordings');
 INSERT INTO Label VALUES (6, 'Walt Disney Records');
 INSERT INTO Label VALUES (7, 'Republic Records');
 INSERT INTO Label VALUES (8, 'Parkwood Entertainment');
+INSERT INTO Label VALUES (9, 'Warner Bro. Records');
+INSERT INTO Label VALUES (10, 'Westbury Road Entertainment');
 
 
-INSERT INTO Song VALUES (1, 1, 'w', 'w', 'w', null, 'Hello', 2016);
-INSERT INTO Song VALUES (2, 2, null, null, null, 'w', 'Blackstar', 2016);
-INSERT INTO Song VALUES (3, 4, 'n', null, null, null, 'Stressed Out', 2016);
-INSERT INTO Song VALUES (4, 6, null, null, 'n', null, 'Dangerous Woman', 2016);
-INSERT INTO Song VALUES (5, 7, 'n', 'n', null, null, 'Formation', 2016);
+INSERT INTO Song VALUES (1, 1, 'Hello', 2016);
+INSERT INTO Song VALUES (2, 2, 'Blackstar', 2016);
+INSERT INTO Song VALUES (3, 4, 'Stressed Out', 2016);
+INSERT INTO Song VALUES (4, 6, 'Dangerous Woman', 2016);
+INSERT INTO Song VALUES (5, 7, 'Formation', 2016);
+INSERT INTO Song VALUES (6, 8, '7 Years', 2016);
+INSERT INTO Song VALUES (7, null, 'Work', 2016);
 
-INSERT INTO Artist VALUES (1, null, 'Adele');
-INSERT INTO Artist VALUES (2, null, 'David Bowie');
-INSERT INTO Artist VALUES (3, null, 'Panic! At The Disco');
-INSERT INTO Artist VALUES (4, null, 'Twenty One Pilots');
-INSERT INTO Artist VALUES (5, 'w', 'Chance The Rapper');
-INSERT INTO Artist VALUES (6, null, 'Ariana Grande');
-INSERT INTO Artist VALUES (7, null, 'Beyonce')
+INSERT INTO Artist VALUES (1, 'Adele');
+INSERT INTO Artist VALUES (2, 'David Bowie');
+INSERT INTO Artist VALUES (3, 'Panic! At The Disco');
+INSERT INTO Artist VALUES (4, 'Twenty One Pilots');
+INSERT INTO Artist VALUES (5, 'Chance The Rapper');
+INSERT INTO Artist VALUES (6, 'Ariana Grande');
+INSERT INTO Artist VALUES (7, 'Beyonce');
+INSERT INTO Artist VALUES (8, 'Lukas Graham');
+INSERT INTO Artist VALUES (9, 'Rihanna');
+INSERT INTO Artist VALUES (10, 'Drake');
 
 INSERT INTO Person VALUES (1, 'Greg', 'Kurstin', null);
 INSERT INTO Person VALUES (2, 'Julian', 'Burg', null);
@@ -54,6 +62,20 @@ INSERT INTO Person VALUES (19, null, null, 'Pluss');
 INSERT INTO Person VALUES (20, 'Jaycen', 'Joshua', null);
 INSERT INTO Person VALUES (21, 'Stuart', 'White', null);
 INSERT INTO Person VALUES (22, 'Dave', 'Kutch', null);
+INSERT INTO Person VALUES (23, null, null, 'Future Animals');
+INSERT INTO Person VALUES (24, null, null, 'Pilo');
+INSERT INTO Person VALUES (25, 'Delbert', 'Bowers', null);
+INSERT INTO Person VALUES (26, 'Sebastian', 'Fogh', null);
+INSERT INTO Person VALUES (27, 'Stefan', 'Forrest', null);
+INSERT INTO Person VALUES (28, 'David', 'LaBrel', null);
+INSERT INTO Person VALUES (29, 'Tom', 'Coyne', null);
+INSERT INTO Person VALUES (30, null, null, 'Boi-1da');
+INSERT INTO Person VALUES (31, 'Noel', 'Campbell', 'Gadget');
+INSERT INTO Person VALUES (32, 'Kuk', 'Harrell', null);
+INSERT INTO Person VALUES (33, 'Manny', 'Marroquin', null);
+INSERT INTO Person VALUES (34, 'Noah', 'Shebib', '40');
+INSERT INTO Person VALUES (35, 'Marcos', 'Tovar', null);
+INSERT INTO Person VALUES (36, 'Chris', 'Gehringer', null);
 
 INSERT INTO Publisher VALUES (1, 'Nipple Music', 'RZO Music, Inc');
 
@@ -68,6 +90,9 @@ INSERT INTO AlbumLabel VALUES (5, 6);
 INSERT INTO AlbumLabel VALUES (6, 7);
 INSERT INTO AlbumLabel VALUES (7, 1);
 INSERT INTO AlbumLabel VALUES (7, 8);
+INSERT INTO AlbumLabel VALUES (8, 9);
+
+INSERT INTO SongLabel VALUES (7, 10);
 
 INSERT INTO PublisherSong VALUES (1, 2);
 
@@ -95,66 +120,32 @@ INSERT INTO SongPerson VALUES (5, 19, 'producer');
 INSERT INTO SongPerson VALUES (5, 20, 'mixer/engineer');
 INSERT INTO SongPerson VALUES (5, 21, 'mixer/engineer');
 INSERT INTO SongPerson VALUES (5, 22, 'mastering engineer');
+INSERT INTO SongPerson VALUES (6, 23, 'producer');
+INSERT INTO SongPerson VALUES (6, 24, 'producer');
+INSERT INTO SongPerson VALUES (6, 25, 'mixer/engineer');
+INSERT INTO SongPerson VALUES (6, 26, 'mixer/engineer');
+INSERT INTO SongPerson VALUES (6, 27, 'mixer/engineer');
+INSERT INTO SongPerson VALUES (6, 28, 'mixer/engineer');
+INSERT INTO SongPerson VALUES (6, 29, 'mastering engineer');
+INSERT INTO SongPerson VALUES (7, 30, 'producer');
+INSERT INTO SongPerson VALUES (7, 31, 'mixer/engineer');
+INSERT INTO SongPerson VALUES (7, 32, 'mixer/engineer');
+INSERT INTO SongPerson VALUES (7, 33, 'mixer/engineer');
+INSERT INTO SongPerson VALUES (7, 34, 'mixer/engineer');
+INSERT INTO SongPerson VALUES (7, 35, 'mixer/engineer');
+INSERT INTO SongPerson VALUES (7, 36, 'mastering engineer');
 
-INSERT INTO ArtistSong VALUES (1, 1);
-INSERT INTO ArtistSong VALUES (2, 2);
-INSERT INTO ArtistSong VALUES (4, 3);
-INSERT INTO ArtistSong VALUES (6, 4);
-INSERT INTO ArtistSong VALUES (7, 5);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+INSERT INTO ArtistSong VALUES (1, 1, 'artist');
+INSERT INTO ArtistSong VALUES (2, 2, 'artist');
+INSERT INTO ArtistSong VALUES (4, 3, 'artist');
+INSERT INTO ArtistSong VALUES (6, 4, 'artist');
+INSERT INTO ArtistSong VALUES (7, 5, 'artist');
+INSERT INTO ArtistSong VALUES (8, 6, 'artist');
+INSERT INTO ArtistSong VALUES (9, 7, 'artist');
+INSERT INTO ArtistSong VALUES (10, 7, 'featured artist');
 
 
 
 
 
---Tables of nominees
 
-create table RecordofYear
-	AS (SELECT * FROM Song WHERE RecordofYear IS NOT NULL);
-	ALTER TABLE RecordofYear ADD votes integer;
-	
-create table AlbumofYear
-	AS (SELECT * FROM Album WHERE AlbumofYear IS NOT NULL);
-	ALTER TABLE AlbumofYear ADD votes integer;
-	
-create table SongofYear
-	AS (SELECT * FROM Song WHERE SongofYear IS NOT NULL);
-	ALTER TABLE SongofYear ADD votes integer;
-
-create table BestNewArtist
-	AS (SELECT * FROM Artist WHERE BestNewArtist IS NOT NULL);
-	ALTER TABLE BestNewArtist ADD votes integer;
-
-create table BestPopSoloPerformance
-	AS (SELECT * FROM Song WHERE BestPopSoloPerformance IS NOT NULL);
-	ALTER TABLE BestPopSoloPerformance ADD votes integer;	
-	
-create table BestRockSong
-	AS (SELECT * FROM Song WHERE BestRockSong IS NOT NULL);
-	ALTER TABLE BestRockSong ADD votes integer;
-	
-create table BestRockAlbum
-	AS (SELECT * FROM Album WHERE BestRockAlbum IS NOT NULL);
-	ALTER TABLE BestRockAlbum ADD votes integer;
-	
-create table BestScore
-	AS (SELECT * FROM Album WHERE BestScore IS NOT NULL);
-	ALTER TABLE BestScore ADD votes integer;
