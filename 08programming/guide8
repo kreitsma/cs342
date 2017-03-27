@@ -1,0 +1,22 @@
+1a.
+	1. Embedding database commands in a general-purpose programming language
+	2. Using a library of database functions or classes
+	3. Designing a brand-new language
+b.
+	Independence mismatch: problems that occur because of differences between the database model and the programming language model
+	Stored procedures: procedures or functions that are stored and executed by the DBMS at the database server
+	Triggers: technique for specifying certain types of active rules
+
+2a.
+	Nonprocedural: Set of data to be operated on is specified, but not the operations to be performed or the manner in which they are to be carried out
+	Procedural: Most statement execution depends on previous or subsequent statements and on control structures (loops and conditionals) not in SQL 
+
+	Client-side: Embed SQL statements in applications written in procedural languages like C, C++, Java
+	Server-side: Develop data logic that resides in the database
+b.
+	PL/SQL is useful on the server side because it is an extension to SQL - it supports all Oracle SQL statements, functions, and data types.
+c.
+	i. This is a standalone stored subprogram. it takes in a number as a parameter and outputs all integers counting from 1 to that number.
+	ii. This is a simple PL/SQL program. It outputs the line "Hello, PL/SQL!"
+	iii. This is a database trigger. If someone tries to add a new person or change a person's last name, it outputs "Hello, name change!" for each person added/changed.
+
