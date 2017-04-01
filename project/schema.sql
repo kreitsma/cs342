@@ -10,11 +10,6 @@ create table Label (
 	name varchar(80)
 	);
 	
-create table Publisher (
-	ID integer PRIMARY KEY,
-	name varchar(50),
-	adminBy varchar(80)
-	);
 	
 create table Person (
 	ID integer PRIMARY KEY,
@@ -74,18 +69,11 @@ create table SongLabel (
 	FOREIGN KEY (SongID) REFERENCES Song(ID) ON DELETE CASCADE,
 	FOREIGN KEY (LabelID) REFERENCES Label(ID) ON DELETE CASCADE
 	);
-	
-create table PublisherSong (
-	SongID integer,
-	PublisherID integer,
-	FOREIGN KEY (SongID) REFERENCES Song(ID) ON DELETE CASCADE,
-	FOREIGN KEY (PublisherID) REFERENCES Publisher(ID) ON DELETE CASCADE
-	); 
 
 create table AlbumPerson (
 	AlbumID integer,
 	PersonID integer,
-	role varchar(10), --Mixer, Engineer, Producer, Performer, etc.
+	role varchar(20), --Mixer, Engineer, Producer, Performer, etc.
 	FOREIGN KEY (AlbumID) REFERENCES Album(ID) ON DELETE CASCADE,
 	FOREIGN KEY (PersonID) REFERENCES Person(ID) ON DELETE CASCADE
 	);
@@ -93,7 +81,7 @@ create table AlbumPerson (
 create table SongPerson (
 	SongID integer,
 	PersonID integer,
-	role varchar(10),
+	role varchar(20),
 	FOREIGN KEY (SongID) REFERENCES Song(ID) ON DELETE CASCADE,
 	FOREIGN KEY (PersonID) REFERENCES Person(ID) ON DELETE CASCADE
 	);
@@ -112,6 +100,13 @@ create table Student (
 	fName varchar(50),
 	lName varchar(50),
 	CHECK (ID < 9999999)
+	);
+	
+create table Vote (
+	AwardID integer,
+	StudentID integer,
+	FOREIGN KEY (AwardID) REFERENCES Award(ID) ON DELETE CASCADE,
+	FOREIGN KEY (StudentID) REFERENCES Student(ID) ON DELETE CASCADE
 	);
 	
 	
