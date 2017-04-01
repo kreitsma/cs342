@@ -41,7 +41,8 @@ create table Award ( --Get rid of ID and make year and category a super primary 
 	ID integer PRIMARY KEY,
 	category varchar(50),
 	yearReceived year,
-	winner varchar(7) --'winner' or 'nominee'
+	winner varchar(7), --'winner' or 'nominee'
+	votes integer,
 	AlbumID integer,
 	SongID integer,
 	ArtistID integer,
@@ -102,12 +103,12 @@ create table Student (
 	CHECK (ID < 9999999)
 	);
 	
-create table Vote (
-	AwardID integer,
-	StudentID integer,
-	FOREIGN KEY (AwardID) REFERENCES Award(ID) ON DELETE CASCADE,
-	FOREIGN KEY (StudentID) REFERENCES Student(ID) ON DELETE CASCADE
-	);
+--create table Vote (
+	--AwardID integer,
+	--StudentID integer,
+	--FOREIGN KEY (AwardID) REFERENCES Award(ID) ON DELETE CASCADE,
+	--FOREIGN KEY (StudentID) REFERENCES Student(ID) ON DELETE CASCADE
+	--);
 	
 	
 	

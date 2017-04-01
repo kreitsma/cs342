@@ -261,12 +261,12 @@ INSERT INTO ArtistSong VALUES (6, 5, 'artist');
 
 
 
-INSERT INTO Award VALUES (1, 'Record of the Year', 2016, 'winner', null, 1, null);
-INSERT INTO Award VALUES (2, 'Record of the Year', 2016, 'nominee', null, 2, null);
-INSERT INTO Award VALUES (3, 'Record of the Year', 2016, 'nominee', null, 3, null);
-INSERT INTO Award VALUES (4, 'Record of the Year', 2016, 'nominee', null, 4, null);
-INSERT INTO Award VALUES (5, 'Record of the Year', 2016, 'nominee', null, 5, null);
-INSERT INTO Award VALUES (6, 'Album of the Year', 2016, 'winner', 1, null, null);
+INSERT INTO Award VALUES (1, 'Record of the Year', 2016, 'winner', 0, null, 1, null);
+INSERT INTO Award VALUES (2, 'Record of the Year', 2016, 'nominee', 0, null, 2, null);
+INSERT INTO Award VALUES (3, 'Record of the Year', 2016, 'nominee', 0, null, 3, null);
+INSERT INTO Award VALUES (4, 'Record of the Year', 2016, 'nominee', 0, null, 4, null);
+INSERT INTO Award VALUES (5, 'Record of the Year', 2016, 'nominee', 0, null, 5, null);
+INSERT INTO Award VALUES (6, 'Album of the Year', 2016, 'winner', 1, 0, null, null);
 
 
 
