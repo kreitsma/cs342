@@ -8,6 +8,7 @@ INSERT INTO Album VALUES (5, null, 'Star Wars: The Force Awakens', 2016);
 INSERT INTO Album VALUES (6, 6, 'Dangerous Woman', 2016);
 INSERT INTO Album VALUES (7, 7, 'Lemonade', 2016);
 INSERT INTO Album VALUES (8, 8, 'Lukas Graham', 2016);
+INSERT INTO Album VALUES (9, 11, 'Blurryface', 2016);
 
 INSERT INTO Label VALUES (1, 'Columbia Records');
 INSERT INTO Label VALUES (2, 'ISO');
@@ -28,6 +29,7 @@ INSERT INTO Song VALUES (4, 6, 'Dangerous Woman', 2016);
 INSERT INTO Song VALUES (5, 7, 'Formation', 2016);
 INSERT INTO Song VALUES (6, 8, '7 Years', 2016);
 INSERT INTO Song VALUES (7, null, 'Work', 2016);
+INSERT INTO Song VALUES (8, 9, 'Stressed Out', 2016);
 
 INSERT INTO Artist VALUES (1, 'Adele');
 INSERT INTO Artist VALUES (2, 'David Bowie');
@@ -39,6 +41,7 @@ INSERT INTO Artist VALUES (7, 'Beyonce');
 INSERT INTO Artist VALUES (8, 'Lukas Graham');
 INSERT INTO Artist VALUES (9, 'Rihanna');
 INSERT INTO Artist VALUES (10, 'Drake');
+INSERT INTO Artist VALUES (11, 'Twenty One Pilots');
 
 INSERT INTO Person VALUES (1, 'Greg', 'Kurstin', null);
 INSERT INTO Person VALUES (2, 'Julian', 'Burg', null);
