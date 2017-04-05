@@ -9,4 +9,32 @@ iii. A tree pointer is a pointer to another node in the B-tree. A data pointer i
 b.
 Keys can have multiple attributes, which means they need to be consistent in the way they are ordered.
 c.
-Hash indexes are secondary structures to access a file by using hashing on a search key. A bitmap
+Hash indexes are secondary structures to access a file by using hashing on a search key. A bitmap index
+facilitates querying on multiple keys, and is used for relations that have a large number of rows.
+
+d.
+i. It is an activity where the goal is not only to create the appropriate structuring of data in storage,
+but also to do so in a way that guarantees good performance.
+ii. B-trees are usually used for indexing. Hash indexes are also used, and while they are good with equality
+conditions (particularly during joins), they do not support range queries. Bitmaps are used when there are fields
+with a small number of unique values.
+iii. I think it is, since one of the goals of PDD is to create the appropriate structuring of data.
+
+2.
+Query optimization is the process of choosing a suitable execution strategy for processing a query.
+
+3.
+a.
+EXPLAIN PLAN FOR SELECT * FROM Movie;
+SELECT PLAN_TABLE_OUTPUT 
+  FROM TABLE(DBMS_XPLAN.DISPLAY());
+
+This outputs details about the execution plan (such as hash value, cpu_cost, bytes used, etc.)
+(https://docs.oracle.com/database/121/TGSQL/tgsql_interp.htm#TGSQL279)
+
+b.
+TABLE ACCESS FULL - Reads the entire table--all rows and columns--as stored on the disk
+TABLE ACCESS BY INDEX - Retrieves a row from the table using the ROWID retrieved from the preceding index lookup
+NESTED LOOPS - Join two tables by fetching the result from one table and querying the other table for each row from the first
+HASH JOIN -  Loads the candidate records from one side of the join into a hash table that is then probed for each row from the other side of the join
+INDEX UNIQUE SCAN - Performs the B-tree traversal only. The database uses this operation if a unique constraint ensures that the search criteria will match no more than one entry
