@@ -1,0 +1,12 @@
+1.
+a.
+i. A B-tree is a tree that is self-balancing; on insert and delete it makes sure the tree is balanced.
+   A B+-tree is like a B-tree only the data pointers are stored only at the leaf nodes of the tree
+ii. A tree is balanced if: the left and right subtrees' heights differ by at most one, and the left and right
+    subtrees are balanced.
+iii. A tree pointer is a pointer to another node in the B-tree. A data pointer is a pointer to the record.
+
+b.
+Keys can have multiple attributes, which means they need to be consistent in the way they are ordered.
+c.
+Hash indexes are secondary structures to access a file by using hashing on a search key. A bitmap
