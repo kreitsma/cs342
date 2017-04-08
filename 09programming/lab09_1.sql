@@ -50,14 +50,17 @@ EXPLAIN PLAN FOR SELECT * FROM Actor JOIN Role ON Actor.id + 1 = Role.actorId + 
 --plans are the same.
 
 --d. 
+EXPLAIN PLAN FOR SELECT COUNT(*) FROM Actor JOIN Role ON Actor.id = Role.actorId JOIN Movie ON Role.movieId = Movie.id;
+--There doesn't seem to be any difference in execution time the more times I run it.
 
+--e.
+SELECT COUNT(*) FROM Actor JOIN Role ON Actor.id = Role.actorId;
+--0.07 seconds on average
 
+CREATE INDEX idx ON Actor(lastName);
 
-
-
-
-
-
+SELECT COUNT(*) FROM Actor JOIN Role ON Actor.id = Role.actorId;
+--0.09 seconds on average
 
 
 
