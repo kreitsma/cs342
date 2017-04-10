@@ -1,0 +1,34 @@
+1.
+a.
+Parallel processes actually execute at the same time on different CPUs, but interleaving has one CPU switching back
+and forth between the processes.
+b.
+The Lost Update problem is when two transactions that access the same database items have their operations interleaved
+in a way that makes the value of some items incorrect. The Dirty Read problem is when a database item is updated but the
+transaction fails, but the updated item is read before it is rolled back to its original value.
+c.
+Transaction: An executing program that forms a logical unit of database processing
+Commit: When changes introduced by a transaction can be permanantly applied to the database
+Rollback: Returns the database to a previous state
+d.
+Atomicity - performed in its entirety or not at all
+Consistency Preservation - should take the database from one consistent state to the other
+Isolation - should appear as being executed in isolation from other transactions
+Durability - the changes from transactions must persist in the database
+e.
+A schedule is an ordering of the operations of the transactions
+
+2.
+a.
+A lock is a variable prevents multiple data items being accessed concurrently 
+b.
+Two phase locking has 2 phases:
+	Expanding: locks are acquired and no locks are released
+	Shrinking: locks are released and no locks are acquired
+
+3.
+a.
+Rollback undoes the work done in the current transaction, while Savepoint identifies a point in the transaction to where 
+the programmer can roll back. Commit ends the transaction and makes it permanent.
+b.
+The Lock Table statement explicitly locks entire tables, while For Update can lock specific rows.
