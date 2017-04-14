@@ -1,0 +1,32 @@
+SQL> LOCK TABLE Movie IN EXCLUSIVE MODE NOWAIT;
+LOCK TABLE Movie IN EXCLUSIVE MODE NOWAIT
+           *
+ERROR at line 1:
+ORA-00054: resource busy and acquire with NOWAIT specified or timeout expired 
+
+
+SQL> LOCK TABLE Movie IN EXCLUSIVE MODE NOWAIT;
+
+Table(s) Locked.
+
+SQL> UPDATE Movie SET rank = rank - .1 WHERE id=10920;
+
+1 row updated.
+
+SQL> SELECT rank FROM Movie WHERE id = 10920;
+
+      RANK                                                                      
+----------                                                                      
+       8.5                                                                    
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> SELECT rank FROM Movie WHERE id = 10920;
+
+      RANK                                                                      
+----------                                                                      
+       8.5                                                                    
+
+SQL> SPOOL OFF;

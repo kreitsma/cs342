@@ -1,0 +1,16 @@
+10.1
+
+Predictions:
+1. These will return the same thing.
+2. The session that deleted it will have one less movie, but the other session will still have all of them.
+3. These will return the same thing.
+4. The session that added it will have one more movie than the other session.
+5. The other session will have the added movie.
+
+Reality:
+1. Went as expected
+2. Went as expected
+3. Went as expected
+4. Went as expected
+5. Went as expected
+
