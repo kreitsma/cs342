@@ -1,0 +1,30 @@
+Guide 11
+1.
+	a.
+		Client Tier: consists of application clients that access a Java EE server and that are usually located on a different machine from the server.
+		Web Tier: consists of components that handle the interaction between clients and the business tier. 
+		Business Tier:  consists of components that provide the business logic for an application. 
+		Enterprise Information Systems Tier:  consists of database servers, enterprise resource planning systems, and other legacy data sources, like mainframes.
+		Java EE focuses on the web tier and business tier. I think Oracle would focus on the Enterprise Information systems tier as it contains the database servers.
+	b.
+		Java EE containers are the interface between the component and the lower-level functionality provided by the platform to support that component.
+		There are Web containers, EJB containers, and Application Client containers.
+2.
+	a.
+		JPA:  a Java standards–based solution for persistence.
+		JTA:  provides a standard interface for demarcating transactions.
+		JAX-RS: defines APIs for the development of web services built according to the Representational State Transfer (REST) architectural style. 
+		JDBC: lets you invoke SQL commands from Java programming language methods.
+		JAXB:  provides a convenient way to bind an XML schema to a representation in Java language programs.
+	b.
+		JAR: Enterprise Java beans
+		WAR: Web modules which contain Servlet class files
+		All of these files are packaged as a JAR file with .ear 
+3.
+	a.
+		Intellij IDEA
+	b.
+		JDK (Java Development Kit): allows you to develop in Java
+		Glassfish: Application server
+	c.
+		REST stands for Representational State Transfer. It must be stateless, transfer XML/JSON, and handle common HTTP methods.

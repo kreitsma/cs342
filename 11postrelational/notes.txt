@@ -8,3 +8,6 @@ f. WAR means Web application ARchive. It is a a directory structure that is read
 g. An "exploded" WAR file means that the contents of the WAR file are contained in an unzipped folder
    as opposed to a WAR file in a zipped folder.
 h. An EAR file is a .jar and .war files packaged into a jar file with a .ear extension.
+
+11.2
+b. It uses Glassfish 4.1.0 RESTful Web Service.
