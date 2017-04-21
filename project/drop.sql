@@ -1,6 +1,5 @@
 drop table Artist;
 drop table Label;
-drop table Publisher;
 drop table Person;
 drop table Album;
 drop table Song;
@@ -8,7 +7,6 @@ drop table Award;
 drop table AwardCategories;
 drop table AlbumLabel;
 drop table SongLabel;
-drop table PublisherSong;
 drop table AlbumPerson;
 drop table SongPerson;
 drop table ArtistSong;

@@ -13,9 +13,10 @@ create table Label (
 	
 create table Person (
 	ID integer PRIMARY KEY,
-	fName varchar(30),
-	lName varchar(50),
-	nickName varchar(50)
+	fName varchar(30) NULL,
+	lName varchar(50) NULL,
+	nickName varchar(50) NULL
+	--Need a check to make sure all three are not null at once
 	);
 	
 create table Album (
@@ -29,7 +30,7 @@ create table Album (
 	
 create table Song (
 	ID integer PRIMARY KEY,
-	AlbumID integer,
+	AlbumID integer NULL,
 	title varchar(50),
 	yearNominated integer,
 	FOREIGN KEY (AlbumID) REFERENCES Album(ID) ON DELETE CASCADE,
@@ -40,15 +41,16 @@ create table Song (
 create table Award ( --Get rid of ID and make year and category a super primary key?
 	ID integer PRIMARY KEY,
 	category varchar(50),
-	yearReceived year,
-	winner varchar(7), --'winner' or 'nominee'
+	yearReceived integer,
+	status varchar(7), --'winner' or 'nominee'
 	votes integer,
 	AlbumID integer,
 	SongID integer,
 	ArtistID integer,
 	FOREIGN KEY (AlbumID) REFERENCES Album(ID) ON DELETE CASCADE,
 	FOREIGN KEY (SongID) REFERENCES Song(ID) ON DELETE CASCADE,
-	FOREIGN KEY (ArtistID) REFERENCES Artist(ID) ON DELETE CASCADE
+	FOREIGN KEY (ArtistID) REFERENCES Artist(ID) ON DELETE CASCADE,
+	CHECK (yearReceived > 1900 AND yearReceived < 2018)
 	);
 	
 create table AwardCategories (

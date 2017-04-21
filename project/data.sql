@@ -1,9 +1,10 @@
 --Data
-
-INSERT INTO Album VALUES (1, 1, '25', 2016);
-INSERT INTO Album VALUES (2, 2, 'Lemonade', 2016);
-INSERT INTO Album VALUES (3, 3, 'Lukas Graham', 2016);
-INSERT INTO Album VALUES (4, 6, 'Blurryface', 2016);
+INSERT INTO Artist VALUES (1, 'Adele');
+INSERT INTO Artist VALUES (2, 'Beyonce');
+INSERT INTO Artist VALUES (3, 'Lukas Graham');
+INSERT INTO Artist VALUES (4, 'Rihanna');
+INSERT INTO Artist VALUES (5, 'Drake');
+INSERT INTO Artist VALUES (6, 'Twenty One Pilots');
 
 
 INSERT INTO Label VALUES (1, 'Columbia Records');
@@ -16,23 +17,6 @@ INSERT INTO Label VALUES (7, 'Republic Records');
 INSERT INTO Label VALUES (8, 'Parkwood Entertainment');
 INSERT INTO Label VALUES (9, 'Warner Bro. Records');
 INSERT INTO Label VALUES (10, 'Westbury Road Entertainment');
-
-
-INSERT INTO Song VALUES (1, 1, 'Hello', 2016);
-INSERT INTO Song VALUES (2, 2, 'Formation', 2016);
-INSERT INTO Song VALUES (3, 3, '7 Years', 2016);
-INSERT INTO Song VALUES (4, null, 'Work', 2016);
-INSERT INTO Song VALUES (5, 4, 'Stressed Out', 2016);
-
-
-INSERT INTO Artist VALUES (1, 'Adele');
-INSERT INTO Artist VALUES (2, 'Beyonce');
-INSERT INTO Artist VALUES (3, 'Lukas Graham');
-INSERT INTO Artist VALUES (4, 'Rihanna');
-INSERT INTO Artist VALUES (5, 'Drake');
-INSERT INTO Artist VALUES (6, 'Twenty One Pilots');
-
-
 
 
 INSERT INTO Person VALUES (1, 'Greg', 'Kurstin', null);
@@ -121,6 +105,18 @@ INSERT INTO Person VALUES (83, 'Vance', 'Powell', null);
 INSERT INTO Person VALUES (84, 'Joshua', 'Smith', null);
 
 
+INSERT INTO Album VALUES (1, 1, '25', 2016);
+INSERT INTO Album VALUES (2, 2, 'Lemonade', 2016);
+INSERT INTO Album VALUES (3, 3, 'Lukas Graham', 2016);
+INSERT INTO Album VALUES (4, 6, 'Blurryface', 2016);
+
+
+
+INSERT INTO Song VALUES (1, 1, 'Hello', 2016);
+INSERT INTO Song VALUES (2, 2, 'Formation', 2016);
+INSERT INTO Song VALUES (3, 3, '7 Years', 2016);
+INSERT INTO Song VALUES (4, null, 'Work', 2016);
+INSERT INTO Song VALUES (5, 4, 'Stressed Out', 2016);
 
 
 
@@ -206,8 +202,6 @@ INSERT INTO AlbumPerson VALUES(2, 21, 'engineer/mixer');
 INSERT INTO AlbumPerson VALUES(2, 22, 'mastering engineer');
 
 
-INSERT INTO PublisherSong VALUES (1, 2);
-
 
 INSERT INTO SongPerson VALUES (1, 1, 'producer');
 INSERT INTO SongPerson VALUES (1, 1, 'engineer/mixer');
@@ -266,7 +260,7 @@ INSERT INTO Award VALUES (2, 'Record of the Year', 2016, 'nominee', 0, null, 2, 
 INSERT INTO Award VALUES (3, 'Record of the Year', 2016, 'nominee', 0, null, 3, null);
 INSERT INTO Award VALUES (4, 'Record of the Year', 2016, 'nominee', 0, null, 4, null);
 INSERT INTO Award VALUES (5, 'Record of the Year', 2016, 'nominee', 0, null, 5, null);
-INSERT INTO Award VALUES (6, 'Album of the Year', 2016, 'winner', 1, 0, null, null);
+INSERT INTO Award VALUES (6, 'Album of the Year', 2016, 'winner', 0, 1, null, null);
 
 
 
