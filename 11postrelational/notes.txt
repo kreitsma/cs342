@@ -1,0 +1,10 @@
+11.1
+c. The external libraries contain the JDK (jdk 1.8) as well as the application server (Glassfish).
+   J2SE would only contain the JDK, but since we are using J2EE, we need the additional library.
+d. This is running on the client tier as it is hard-coded in the html.
+e. It uses localhost on port 8080. I believe this is the port most typically used for serving up
+   web pages on a local machine, but obviously a production web server would use a dedicated URL.
+f. WAR means Web application ARchive. It is a a directory structure that is ready for deployment onto a web server.
+g. An "exploded" WAR file means that the contents of the WAR file are contained in an unzipped folder
+   as opposed to a WAR file in a zipped folder.
+h. An EAR file is a .jar and .war files packaged into a jar file with a .ear extension.
