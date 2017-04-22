@@ -105,12 +105,12 @@ create table Student (
 	CHECK (ID < 9999999)
 	);
 	
---create table Vote (
-	--AwardID integer,
-	--StudentID integer,
-	--FOREIGN KEY (AwardID) REFERENCES Award(ID) ON DELETE CASCADE,
-	--FOREIGN KEY (StudentID) REFERENCES Student(ID) ON DELETE CASCADE
-	--);
+create table Vote (
+	AwardID integer,
+	StudentID integer,
+	FOREIGN KEY (AwardID) REFERENCES Award(ID) ON DELETE CASCADE,
+	FOREIGN KEY (StudentID) REFERENCES Student(ID) ON DELETE CASCADE
+	);
 	
 	
 	

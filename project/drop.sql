@@ -11,3 +11,4 @@ drop table AlbumPerson;
 drop table SongPerson;
 drop table ArtistSong;
 drop table Student;
+drop table Vote;
