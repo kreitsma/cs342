@@ -12,13 +12,13 @@ CREATE MATERIALIZED VIEW StudentVoting AS
 --original Award table as well, which would not happen in a non-materialized view.
 
 --Get a list of Songs, the name of its Album, the name of its Artist, and its mastering engineer, if a song has all these things
-SELECT Song.title, Album.name, Artist.name, Person.fName, Person.lName, Person.nickNme FROM Song
+SELECT Song.title, Album.name, Artist.name, Person.fName, Person.lName, Person.nickName FROM Song
 	JOIN Album ON Song.AlbumID = Album.ID
 	JOIN ArtistSong ON Song.ID = ArtistSong.SongID
 	JOIN Artist ON Artist.ID = ArtistSong.ArtistID
 	JOIN SongPerson ON Song.ID = SongPerson.SongID
 	JOIN Person ON Person.ID = SongPerson.PersonID
-		WHERE ArtistSong.role = 'artist' AND SongPerson = 'mastering engineer';	
+		WHERE ArtistSong.role = 'artist' AND SongPerson.role = 'mastering engineer';	
 --This query would be used by the main application. When showing nominees in a list, this query could be used
 --to let the user see a full list of nominated songs, along with who wrote them, what album they're from, and their
 --mastering engineers.

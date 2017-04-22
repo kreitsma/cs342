@@ -1,0 +1,129 @@
+SQL> EXPLAIN PLAN FOR SELECT Song.title, Album.name, Artist.name, Person.fName, Person.lName, Person.nickName FROM Song
+  2  JOIN Album ON Song.AlbumID = Album.ID
+  3  JOIN ArtistSong ON Song.ID = ArtistSong.SongID
+  4  JOIN Artist ON Artist.ID = ArtistSong.ArtistID
+  5  JOIN SongPerson ON Song.ID = SongPerson.SongID
+  6  JOIN Person ON Person.ID = SongPerson.PersonID
+  7  WHERE ArtistSong.role = 'artist' AND SongPerson.role = 'mastering engineer';
+
+Explained.
+
+Elapsed: 00:00:00.01
+SQL> SELECT PLAN_TABLE_OUTPUT FROM TABLE(DBMS_XPLAN.DISPLAY());
+
+PLAN_TABLE_OUTPUT
+--------------------------------------------------------------------------------
+Plan hash value: 3812670422
+
+--------------------------------------------------------------------------------
+-----
+
+| Id  | Operation              | Name       | Rows  | Bytes | Cost (%CPU)| Time
+    |
+
+--------------------------------------------------------------------------------
+-----
+
+
+PLAN_TABLE_OUTPUT
+--------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT       |            |     5 |  1715 |    15  (20)| 00:00
+:01 |
+
+|*  1 |  HASH JOIN             |            |     5 |  1715 |    15  (20)| 00:00
+:01 |
+
+|*  2 |   HASH JOIN            |            |     5 |  1295 |    12  (17)| 00:00
+:01 |
+
+|*  3 |    HASH JOIN           |            |     4 |   884 |    10  (20)| 00:00
+:01 |
+
+PLAN_TABLE_OUTPUT
+--------------------------------------------------------------------------------
+
+|*  4 |     HASH JOIN          |            |     4 |   624 |     7  (15)| 00:00
+:01 |
+
+|*  5 |      HASH JOIN         |            |     4 |   472 |     5  (20)| 00:00
+:01 |
+
+|   6 |       TABLE ACCESS FULL| ALBUM      |     4 |   260 |     2   (0)| 00:00
+:01 |
+
+|   7 |       TABLE ACCESS FULL| SONG       |     5 |   265 |     2   (0)| 00:00
+
+PLAN_TABLE_OUTPUT
+--------------------------------------------------------------------------------
+:01 |
+
+|*  8 |      TABLE ACCESS FULL | ARTISTSONG |     5 |   190 |     2   (0)| 00:00
+:01 |
+
+|   9 |     TABLE ACCESS FULL  | ARTIST     |     6 |   390 |     2   (0)| 00:00
+:01 |
+
+|* 10 |    TABLE ACCESS FULL   | SONGPERSON |     6 |   228 |     2   (0)| 00:00
+:01 |
+
+
+PLAN_TABLE_OUTPUT
+--------------------------------------------------------------------------------
+|  11 |   TABLE ACCESS FULL    | PERSON     |    83 |  6972 |     2   (0)| 00:00
+:01 |
+
+--------------------------------------------------------------------------------
+-----
+
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - access("PERSON"."ID"="SONGPERSON"."PERSONID")
+
+PLAN_TABLE_OUTPUT
+--------------------------------------------------------------------------------
+   2 - access("SONG"."ID"="SONGPERSON"."SONGID")
+   3 - access("ARTIST"."ID"="ARTISTSONG"."ARTISTID")
+   4 - access("SONG"."ID"="ARTISTSONG"."SONGID")
+   5 - access("SONG"."ALBUMID"="ALBUM"."ID")
+   8 - filter("ARTISTSONG"."ROLE"='artist')
+  10 - filter("SONGPERSON"."ROLE"='mastering engineer')
+
+Note
+-----
+   - dynamic sampling used for this statement (level=2)
+
+33 rows selected.
+
+Elapsed: 00:00:00.08
+
+
+Average runtime for this query: .35 seconds
+
+Creating indeces to see if it will improve performance:
+SQL> CREATE INDEX artistsong ON ArtistSong(role);
+
+Index created.
+
+Elapsed: 00:00:00.00
+SQL> CREATE INDEX songperson ON SongPerson(role);
+
+Index created.
+
+Elapsed: 00:00:00.00
+
+After creating indeces:
+Average runtime for query with indeces: .25 seconds
+
+
+
+
+
+Analysis:
+
+This query gets a list of songs, the album it belongs to (if applicable), its artist, and the name of its mastering engineer.
+The execution plan goes through all of the JOINs first, which is appropriate. It then accesses the desired tables in the order of
+when they are need in the JOINs. 
+Since all of the JOINs are on primary keys, I wouldn't be able to index them to make it run faster. However, I did index both of 
+the roles (for ArtistSong and SongPerson) and that improved the performance by a pretty decent amount (.1 seconds). 
