@@ -1,0 +1,64 @@
+Guide 12
+1.
+a.
+	i. Java persistence is storing anything to any level of persistence using the Java programming language.
+	   Impedence mismatch is when you need to map objects used in an application to tables stored in a relational database.
+	ii. POJO means Plain Old Java Objects.
+b. Hibernate, EclipseLink, TopLink, OpenJPA. We are using EclipseLink.
+c. 
+import javax.persistence.*;
+
+@Entity
+@Access(AccessType.FIELD)
+public class Solder {
+    @Column(name="Name")
+    private String name;
+    @Column(name="Rank")
+    private String rank;
+    @Id
+    @Column(name="SNumber")
+    private long serialNumber;
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="COMMANDER_ID")
+    private long commanderID;
+
+    @ManyToMany
+    @JoinTable(
+	name="BATTLE",
+	joinColumns=@JoinColumn(name="SoldierSNumber", referencedColumnName="SNumber"),
+	inverseJoinColumns=@JoinColumn(name="BATTLE_ID", referencedColumnName="ID"))
+    private List<Battle> battles;
+
+    @Access(AccessType.PROPERTY)
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public String getRank() { return rank; }
+    public void setRank(String rank) { this.rank = rank; }
+
+    public String getSerialNumber() { return serialNumber; }
+    public void setSerialNumber(String serialNumber) { this.serialNumber = serialNumber; }
+
+    public String getCommanderID() { return id; }
+    public void setCommanderID(long id) { this.id = id; }
+}
+
+d. 
+    i. Entity Manager provides API for creating queries, accessing transactions, and finding, persisting, merging and deleting objects.
+    ii. Injection - The Entity Manager can be injected into an instance variable in an EJB SessionBean.
+   iii. Four operations: persist (INSERT), merge (UPDATE), remove (DELETE), find (SELECT)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
