@@ -1,0 +1,32 @@
+;;; 
+Export: Release 11.2.0.2.0 - Production on Sun Apr 23 21:46:36 2017
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+;;; 
+Connected to: Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+Starting "PROJECT"."SYS_EXPORT_TABLE_01":  project/******** parfile=project.par 
+Estimate in progress using BLOCKS method...
+Processing object type TABLE_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 704 KB
+Processing object type TABLE_EXPORT/TABLE/TABLE
+Processing object type TABLE_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+Processing object type TABLE_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT
+. . exported "PROJECT"."ALBUM"                           6.335 KB       4 rows
+. . exported "PROJECT"."ALBUMLABEL"                        5.5 KB       6 rows
+. . exported "PROJECT"."ALBUMPERSON"                     7.343 KB      69 rows
+. . exported "PROJECT"."ARTIST"                          5.515 KB       6 rows
+. . exported "PROJECT"."ARTISTSONG"                      5.945 KB       6 rows
+. . exported "PROJECT"."AWARD"                           8.132 KB       6 rows
+. . exported "PROJECT"."LABEL"                           5.648 KB      10 rows
+. . exported "PROJECT"."PERSON"                          7.867 KB      83 rows
+. . exported "PROJECT"."SONG"                            6.351 KB       5 rows
+. . exported "PROJECT"."SONGLABEL"                       5.453 KB       1 rows
+. . exported "PROJECT"."SONGPERSON"                      6.664 KB      35 rows
+. . exported "PROJECT"."AWARDCATEGORIES"                     0 KB       0 rows
+. . exported "PROJECT"."STUDENT"                             0 KB       0 rows
+. . exported "PROJECT"."VOTE"                                0 KB       0 rows
+Master table "PROJECT"."SYS_EXPORT_TABLE_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for PROJECT.SYS_EXPORT_TABLE_01 is:
+  C:\USERS\KYLE\DOCUMENTS\2ND SEMESTER JUNIOR\CS 342\CS342\PROJECT\DATAPUMP\PROJECT.DMP
+Job "PROJECT"."SYS_EXPORT_TABLE_01" successfully completed at 21:46:38

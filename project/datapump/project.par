@@ -1,0 +1,4 @@
+DIRECTORY=exp_dir
+DUMPFILE=project.dmp
+LOGFILE=project.log
+TABLES= Artist, Label, Person, Album, Song, Award, AwardCategories, AlbumLabel, SongLabel, AlbumPerson, SongPerson, ArtistSong, Student, Vote

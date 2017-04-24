@@ -1,0 +1,24 @@
+-- Create the Grammys user and database. 
+
+-- Create the user.
+DROP USER project CASCADE;
+CREATE USER project 
+	IDENTIFIED BY kr29
+	QUOTA 5M ON System;
+GRANT 
+	CONNECT,
+	CREATE TABLE,
+	CREATE SESSION,
+	CREATE SEQUENCE,
+	CREATE VIEW,
+	CREATE MATERIALIZED VIEW,
+	CREATE PROCEDURE,
+	CREATE TRIGGER,
+	UNLIMITED TABLESPACE,
+	IMP_FULL_DATABASE,
+	EXP_FULL_DATABASE
+	TO project;
+
+DROP DIRECTORY exp_dir;
+CREATE DIRECTORY exp_dir AS 'C:\Users\Kyle\Documents\2nd Semester Junior\CS 342\cs342\project\datapump';
+GRANT READ,WRITE ON DIRECTORY exp_dir TO project;

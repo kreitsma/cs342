@@ -127,3 +127,4 @@ The execution plan goes through all of the JOINs first, which is appropriate. It
 when they are need in the JOINs. 
 Since all of the JOINs are on primary keys, I wouldn't be able to index them to make it run faster. However, I did index both of 
 the roles (for ArtistSong and SongPerson) and that improved the performance by a pretty decent amount (.1 seconds). 
+I also experimented a bit with the order of the JOINs, but they did not significantly change the performance.
