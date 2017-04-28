@@ -1,8 +1,6 @@
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 
-// The Java class will be hosted at the URI path "/helloworld"
+// The Java class will be hosted at the URI path "/hello"
 @Path("/hello")
 public class HelloWorld {
     // The Java method will process HTTP GET requests
