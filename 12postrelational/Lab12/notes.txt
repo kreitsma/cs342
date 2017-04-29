@@ -1,12 +1,18 @@
 12.1
-1. 
+1. This database connection uses GlassFish to reach out to the Oracle DBMS, rather than just looking at the DB locally. For our purposes, we 
+technically don't need both, but we would if the database was hosted somewhere other than our physical machine.
 
 12.2
-1.
-2.
-3.
+1. It takes each column of a table and makes it a member of a Java class with the same name as the table. It then generates getters and setters
+for each member.
+2. A PK Class is a primary key class--it is generated when a class (table) is identified by a composite key.
+3. Field annotations
 
 12.3
-1.
-2.
-3.
+1. Yes, it marshals the data it gets from the database by converting it into Java classes. 
+2. Yes, it injects things like the column names, which column it joins, and what kind of relationship two classes have with each other.
+3. The entity manager is what is used to create the query that gets the list of people.
+
+12.4
+1. It returns the person's information along with all their HouseHold's information as well as the information of each team he/she is a part of
+in a list.
