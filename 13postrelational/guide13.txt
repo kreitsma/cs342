@@ -1,0 +1,24 @@
+1.
+a.
+	Key motivation: impedance mismatch between the relational data structures and the in-memory data structures of the application--
+	NoSQL allows developers to not have to convert in-memory structures to relational structures
+b. 
+	Aggregate: a collection of data that we interact with as a unit. Aggregates make it easier for the database to manage data storage over clusters, 
+	since the unit of data now could reside on any machine and when retrieved from the database gets all the related data along with it.
+c.
+	Polyglot persistence is using multiple different storage technologies for persistence based on the way the data is being used in the application.
+d.
+	CAP: Consistency, Availability, Partition toleration--CAP theorem states that you can choose only two of the following.
+e.
+	Types: 
+	Key-Value databases
+	Document databases
+	Column family stores
+	Graph databases
+d.
+	
+2.
+a.
+	A Major Key and Minor Key both specify a path to data. Records that share a major key are co-located to achieve data locality,
+	so that lookups are fast. The Minor Key specifies a location within the locality of the Major Key.
+	
