@@ -1,11 +1,11 @@
 13.1
-a.
-b.
+a. Both commands allow entities to be persisted in the database; however, the store.put() command can update values as well as creating new entities.
+b. From what I cant tell, they are virtually identical except for the fact that a store can be used remotely.
 
 
 13.2
-a.
+a. KVLite uses keys for records that are composite; they are made up of the major key (telling which table) and the minor key (telling which field). Relational databases just have keys for each record, and they can essentially be anything that uniquely identifies a record.
 
 13.3
-a.
-b.
+a. I think you would just create a new key in the table containing a key named "movie" and the ID of the movie you want to join on, similar to how a relational database handles it, except in this case the join is already implemented because you give it the ID when you create the key.  
+b. It could be the equivalent of a NULL value in a relational database.
