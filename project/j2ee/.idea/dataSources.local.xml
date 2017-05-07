@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="grammy&amp;localhost" uuid="8bd04185-c16a-4c82-85a3-8b29c67ff469">
+      <database-info product="Oracle" version="Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production" jdbc-version="4.0" driver-name="Oracle JDBC driver" driver-version="12.1.0.2.0">
+        <extra-name-characters>$#</extra-name-characters>
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>project</user-name>
+      <introspection-scope>*:PROJECT,PUBLIC,SYS,SYSTEM</introspection-scope>
+      <resolve-scope>*:PROJECT,PUBLIC</resolve-scope>
+    </data-source>
+  </component>
+</project>
