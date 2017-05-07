@@ -1,12 +1,10 @@
+import models.Household;
 import models.Person;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -65,6 +63,51 @@ public class CPDBResource {
     @Produces(MediaType.APPLICATION_JSON)
     public List<Person> getPeople() {
         return em.createQuery(em.getCriteriaBuilder().createQuery(Person.class)).getResultList();
+    }
+
+    @PUT
+    @Path("person/{id}")
+    @Consumes("models/person")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String modifyPerson (@PathParam("id") long id, Person person)
+    {
+        if (em.find(Person.class, id) != null) {
+            em.merge(person);
+            return "Person successfully updated!";
+        }
+        else {
+            return "Person not found";
+        }
+    }
+
+    @POST
+    @Path("people")
+    @Consumes("models/person")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String addPerson (Person person)
+    {
+        //Get the next Id by creating a new person and getting its ID that is assigned to it
+        Person nextid = new Person();
+        person.setId(nextid.getId());
+        long householdId =  person.getHousehold().getId();
+        person.setHousehold(em.find(Household.class, householdId));
+        em.persist(person);
+        return "Successfully added person!";
+    }
+
+    @DELETE
+    @Path("person/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String deletePerson (@PathParam("id") long id)
+    {
+        Person person = em.find(Person.class, id);
+        if (person != null) {
+            em.remove(person);
+            return "Person successfully deleted!";
+        }
+        else {
+            return "Person not found";
+        }
     }
 
 }
