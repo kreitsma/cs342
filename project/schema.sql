@@ -63,14 +63,16 @@ create table AlbumLabel (
 	AlbumID integer,
 	LabelID integer NOT NULL,
 	FOREIGN KEY (AlbumID) REFERENCES Album(ID) ON DELETE CASCADE,
-	FOREIGN KEY (LabelID) REFERENCES Label(ID) ON DELETE CASCADE
+	FOREIGN KEY (LabelID) REFERENCES Label(ID) ON DELETE CASCADE,
+	PRIMARY KEY (AlbumID, LabelID)
 	);
 	
 create table SongLabel (
 	SongID integer,
 	LabelID integer NOT NULL,
 	FOREIGN KEY (SongID) REFERENCES Song(ID) ON DELETE CASCADE,
-	FOREIGN KEY (LabelID) REFERENCES Label(ID) ON DELETE CASCADE
+	FOREIGN KEY (LabelID) REFERENCES Label(ID) ON DELETE CASCADE,
+	PRIMARY KEY (SongID, LabelID)
 	);
 
 create table AlbumPerson (
@@ -78,7 +80,8 @@ create table AlbumPerson (
 	PersonID integer,
 	role varchar(20), --Mixer, Engineer, Producer, Performer, etc.
 	FOREIGN KEY (AlbumID) REFERENCES Album(ID) ON DELETE CASCADE,
-	FOREIGN KEY (PersonID) REFERENCES Person(ID) ON DELETE CASCADE
+	FOREIGN KEY (PersonID) REFERENCES Person(ID) ON DELETE CASCADE,
+	PRIMARY KEY (AlbumID, PersonID)
 	);
 	
 create table SongPerson (
@@ -86,7 +89,8 @@ create table SongPerson (
 	PersonID integer,
 	role varchar(20),
 	FOREIGN KEY (SongID) REFERENCES Song(ID) ON DELETE CASCADE,
-	FOREIGN KEY (PersonID) REFERENCES Person(ID) ON DELETE CASCADE
+	FOREIGN KEY (PersonID) REFERENCES Person(ID) ON DELETE CASCADE,
+	PRIMARY KEY (SongID, PersonID)
 	);
 	
 create table ArtistSong (
@@ -94,7 +98,8 @@ create table ArtistSong (
 	SongID integer,
 	role varchar(20),
 	FOREIGN KEY (ArtistID) REFERENCES Artist(ID) ON DELETE CASCADE,
-	FOREIGN KEY (SongID) REFERENCES Song(ID) ON DELETE CASCADE
+	FOREIGN KEY (SongID) REFERENCES Song(ID) ON DELETE CASCADE,
+	PRIMARY KEY (ArtistID, SongID)
 	);
 	
 --Student table
@@ -109,7 +114,8 @@ create table Vote (
 	AwardID integer,
 	StudentID integer,
 	FOREIGN KEY (AwardID) REFERENCES Award(ID) ON DELETE CASCADE,
-	FOREIGN KEY (StudentID) REFERENCES Student(ID) ON DELETE CASCADE
+	FOREIGN KEY (StudentID) REFERENCES Student(ID) ON DELETE CASCADE,
+	PRIMARY KEY (AwardID, StudentID)
 	);
 	
 	

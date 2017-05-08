@@ -16,7 +16,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="" />
         <datasource-mapping>
-          <factory-entry name="grammyEntities" value="8bd04185-c16a-4c82-85a3-8b29c67ff469" />
+          <factory-entry name="cpdbEntities" />
           <factory-entry name="noname-a.xml@0" value="b9b49e04-9505-4385-ab11-8bd4f38ea508" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />
@@ -33,5 +33,6 @@
     <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.0 - RESTful Web Service" level="application_server_libraries" />
     <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.0" level="application_server_libraries" />
     <orderEntry type="library" name="JPA 2.1-2.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.0 - RESTful Web Service" level="application_server_libraries" />
   </component>
 </module>
