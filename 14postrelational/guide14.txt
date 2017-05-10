@@ -1,0 +1,22 @@
+1.
+a.
+	Access Control - preventing unauthorized persons from accessing the system itself
+	Inference Control - preventing the inferrence of facts from queries that involve summary statistics
+	Flow Control - prevents information from flowing in such a way that it reaches unauthorized users
+	Data Encryption - encrypting data before sending it over the communications network
+b.
+	Security refers to the aspects of protecting a system from unauthorized use, but privacy goes beyond security;
+	it examines how well the use of personal information that the system acquires about a user conforms to the explicit or implicit
+	assumptions regarding that use.
+2.
+a.
+	1. Excessive, inappropriate, and unused privileges
+		People who are authorized to use the database can sometimes perform unauthorized lookups and manipulations 
+	2. Privilege abuse
+		Privileged users can manipulate vulnerable data, causing problems.
+	3. Insufficient web application security
+		Using SQL injection and Web Shell, web applications can be attacked and databases can be compromised
+	4.Weak audit trails
+		Failure to monitor security and compliance anomalies and collect audit details pose a risk.
+	5. Unsecured storage media
+		Backup storage media is almost always unprotected, and many security breaches occur on backup disks and tapes
