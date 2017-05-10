@@ -51,10 +51,7 @@ create table Award ( --Get rid of ID and make year and category a super primary 
 	FOREIGN KEY (SongID) REFERENCES Song(ID) ON DELETE CASCADE,
 	FOREIGN KEY (ArtistID) REFERENCES Artist(ID) ON DELETE CASCADE,
 	CHECK (yearReceived > 1900 AND yearReceived < 2018)
-	);
-	
-create table AwardCategories (
-	name varchar(50)
+	--Check constraint for award categories
 	);
 	
 --Intermediary tables
@@ -81,7 +78,7 @@ create table AlbumPerson (
 	role varchar(20), --Mixer, Engineer, Producer, Performer, etc.
 	FOREIGN KEY (AlbumID) REFERENCES Album(ID) ON DELETE CASCADE,
 	FOREIGN KEY (PersonID) REFERENCES Person(ID) ON DELETE CASCADE,
-	PRIMARY KEY (AlbumID, PersonID)
+	PRIMARY KEY (AlbumID, PersonID, role)
 	);
 	
 create table SongPerson (
@@ -90,7 +87,7 @@ create table SongPerson (
 	role varchar(20),
 	FOREIGN KEY (SongID) REFERENCES Song(ID) ON DELETE CASCADE,
 	FOREIGN KEY (PersonID) REFERENCES Person(ID) ON DELETE CASCADE,
-	PRIMARY KEY (SongID, PersonID)
+	PRIMARY KEY (SongID, PersonID, role)
 	);
 	
 create table ArtistSong (

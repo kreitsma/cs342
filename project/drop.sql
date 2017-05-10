@@ -4,7 +4,6 @@ drop table Person;
 drop table Album;
 drop table Song;
 drop table Award;
-drop table AwardCategories;
 drop table AlbumLabel;
 drop table SongLabel;
 drop table AlbumPerson;

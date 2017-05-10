@@ -86,9 +86,6 @@ public class CPDBResource {
     @Produces(MediaType.APPLICATION_JSON)
     public String addPerson (Person person)
     {
-        //Get the next Id by creating a new person and getting its ID that is assigned to it
-        Person nextid = new Person();
-        person.setId(nextid.getId());
         long householdId =  person.getHousehold().getId();
         person.setHousehold(em.find(Household.class, householdId));
         em.persist(person);

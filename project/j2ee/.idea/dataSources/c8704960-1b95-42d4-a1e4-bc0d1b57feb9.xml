@@ -1,0 +1,715 @@
+<dataSource name="grammy&amp;localhost">
+  <database-model serializer="dbm" rdbms="ORACLE" format-version="2.6">
+    <schema id="1" name="PUBLIC">
+      <object-id>1</object-id>
+    </schema>
+    <schema id="2" name="SYS" />
+    <schema id="3" name="SYSTEM">
+      <object-id>5</object-id>
+    </schema>
+    <schema id="4" name="OUTLN">
+      <object-id>9</object-id>
+    </schema>
+    <schema id="5" name="DIP">
+      <object-id>14</object-id>
+    </schema>
+    <schema id="6" name="ORACLE_OCM">
+      <object-id>21</object-id>
+    </schema>
+    <schema id="7" name="DBSNMP">
+      <object-id>29</object-id>
+    </schema>
+    <schema id="8" name="APPQOSSYS">
+      <object-id>30</object-id>
+    </schema>
+    <schema id="9" name="CTXSYS">
+      <object-id>32</object-id>
+    </schema>
+    <schema id="10" name="XDB">
+      <object-id>34</object-id>
+    </schema>
+    <schema id="11" name="ANONYMOUS">
+      <object-id>35</object-id>
+    </schema>
+    <schema id="12" name="MDSYS">
+      <object-id>42</object-id>
+    </schema>
+    <schema id="13" name="HR">
+      <object-id>43</object-id>
+    </schema>
+    <schema id="14" name="FLOWS_FILES">
+      <object-id>44</object-id>
+    </schema>
+    <schema id="15" name="APEX_PUBLIC_USER">
+      <object-id>45</object-id>
+    </schema>
+    <schema id="16" name="APEX_040000">
+      <object-id>47</object-id>
+    </schema>
+    <schema id="17" name="LYDIA">
+      <object-id>48</object-id>
+    </schema>
+    <schema id="18" name="XS$NULL">
+      <object-id>2147483638</object-id>
+    </schema>
+    <schema id="19" name="PROJECT">
+      <object-id>51</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <visible>1</visible>
+      <introspection-timestamp>2017-05-09.19:30:48</introspection-timestamp>
+    </schema>
+    <table id="20" parent="19" name="ALBUM">
+      <object-id>20174</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <table id="21" parent="19" name="ALBUMLABEL">
+      <object-id>20180</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <table id="22" parent="19" name="ALBUMPERSON">
+      <object-id>20184</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <table id="23" parent="19" name="ARTIST">
+      <object-id>20168</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <table id="24" parent="19" name="ARTISTSONG">
+      <object-id>20188</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <table id="25" parent="19" name="AWARD">
+      <object-id>20178</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <table id="26" parent="19" name="LABEL">
+      <object-id>20170</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <table id="27" parent="19" name="PERSON">
+      <object-id>20172</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <table id="28" parent="19" name="SONG">
+      <object-id>20176</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <table id="29" parent="19" name="SONGLABEL">
+      <object-id>20182</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <table id="30" parent="19" name="SONGPERSON">
+      <object-id>20186</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <table id="31" parent="19" name="STUDENT">
+      <object-id>20190</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <table id="32" parent="19" name="VOTE">
+      <object-id>20192</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <column id="33" parent="20" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="34" parent="20" name="ARTISTID">
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="35" parent="20" name="NAME">
+      <data-type>VARCHAR2(100)|0</data-type>
+    </column>
+    <column id="36" parent="20" name="YEARNOMINATED">
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <index id="37" parent="20" name="SYS_C007138">
+      <name-surrogate>1</name-surrogate>
+      <object-id>20175</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ID</columns>
+      <desc-columns />
+      <unique>1</unique>
+      <tablespace-name>SYSTEM</tablespace-name>
+    </index>
+    <key id="38" parent="20" name="SYS_C007138">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ID</columns>
+      <initially-deferred>1</initially-deferred>
+      <underlying-index>SYS_C007138</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="39" parent="20" name="SYS_C007139">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ARTISTID</columns>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>~.ARTIST.SYS_C007134</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <check id="40" parent="20" name="SYS_C007137">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>YEARNOMINATED</columns>
+      <predicate>yearNominated &gt; 1900 AND yearNominated &lt; 2018</predicate>
+    </check>
+    <column id="41" parent="21" name="ALBUMID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="42" parent="21" name="LABELID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <index id="43" parent="21" name="SYS_C007149">
+      <name-surrogate>1</name-surrogate>
+      <object-id>20181</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ALBUMID
+LABELID</columns>
+      <desc-columns />
+      <unique>1</unique>
+      <tablespace-name>SYSTEM</tablespace-name>
+    </index>
+    <key id="44" parent="21" name="SYS_C007149">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ALBUMID
+LABELID</columns>
+      <initially-deferred>1</initially-deferred>
+      <underlying-index>SYS_C007149</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="45" parent="21" name="SYS_C007150">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ALBUMID</columns>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>~.ALBUM.SYS_C007138</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="46" parent="21" name="SYS_C007151">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>LABELID</columns>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>~.LABEL.SYS_C007135</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <column id="47" parent="22" name="ALBUMID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="48" parent="22" name="PERSONID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="49" parent="22" name="ROLE">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR2(20)|0</data-type>
+    </column>
+    <index id="50" parent="22" name="SYS_C007156">
+      <name-surrogate>1</name-surrogate>
+      <object-id>20185</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ALBUMID
+PERSONID
+ROLE</columns>
+      <desc-columns />
+      <unique>1</unique>
+      <tablespace-name>SYSTEM</tablespace-name>
+    </index>
+    <key id="51" parent="22" name="SYS_C007156">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ALBUMID
+PERSONID
+ROLE</columns>
+      <initially-deferred>1</initially-deferred>
+      <underlying-index>SYS_C007156</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="52" parent="22" name="SYS_C007157">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ALBUMID</columns>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>~.ALBUM.SYS_C007138</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="53" parent="22" name="SYS_C007158">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>PERSONID</columns>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>~.PERSON.SYS_C007136</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <column id="54" parent="23" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="55" parent="23" name="NAME">
+      <data-type>VARCHAR2(100)|0</data-type>
+    </column>
+    <index id="56" parent="23" name="SYS_C007134">
+      <name-surrogate>1</name-surrogate>
+      <object-id>20169</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ID</columns>
+      <desc-columns />
+      <unique>1</unique>
+      <tablespace-name>SYSTEM</tablespace-name>
+    </index>
+    <key id="57" parent="23" name="SYS_C007134">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ID</columns>
+      <initially-deferred>1</initially-deferred>
+      <underlying-index>SYS_C007134</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="58" parent="24" name="ARTISTID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="59" parent="24" name="SONGID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="60" parent="24" name="ROLE">
+      <data-type>VARCHAR2(20)|0</data-type>
+    </column>
+    <index id="61" parent="24" name="SYS_C007162">
+      <name-surrogate>1</name-surrogate>
+      <object-id>20189</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ARTISTID
+SONGID</columns>
+      <desc-columns />
+      <unique>1</unique>
+      <tablespace-name>SYSTEM</tablespace-name>
+    </index>
+    <key id="62" parent="24" name="SYS_C007162">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ARTISTID
+SONGID</columns>
+      <initially-deferred>1</initially-deferred>
+      <underlying-index>SYS_C007162</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="63" parent="24" name="SYS_C007163">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ARTISTID</columns>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>~.ARTIST.SYS_C007134</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="64" parent="24" name="SYS_C007164">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>SONGID</columns>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>~.SONG.SYS_C007141</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <column id="65" parent="25" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="66" parent="25" name="CATEGORY">
+      <data-type>VARCHAR2(50)|0</data-type>
+    </column>
+    <column id="67" parent="25" name="YEARRECEIVED">
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="68" parent="25" name="STATUS">
+      <data-type>VARCHAR2(7)|0</data-type>
+    </column>
+    <column id="69" parent="25" name="VOTES">
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="70" parent="25" name="ALBUMID">
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="71" parent="25" name="SONGID">
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="72" parent="25" name="ARTISTID">
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <index id="73" parent="25" name="SYS_C007144">
+      <name-surrogate>1</name-surrogate>
+      <object-id>20179</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ID</columns>
+      <desc-columns />
+      <unique>1</unique>
+      <tablespace-name>SYSTEM</tablespace-name>
+    </index>
+    <key id="74" parent="25" name="SYS_C007144">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ID</columns>
+      <initially-deferred>1</initially-deferred>
+      <underlying-index>SYS_C007144</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="75" parent="25" name="SYS_C007145">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ALBUMID</columns>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>~.ALBUM.SYS_C007138</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="76" parent="25" name="SYS_C007146">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>SONGID</columns>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>~.SONG.SYS_C007141</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="77" parent="25" name="SYS_C007147">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ARTISTID</columns>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>~.ARTIST.SYS_C007134</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <check id="78" parent="25" name="SYS_C007143">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>YEARRECEIVED</columns>
+      <predicate>yearReceived &gt; 1900 AND yearReceived &lt; 2018</predicate>
+    </check>
+    <column id="79" parent="26" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="80" parent="26" name="NAME">
+      <data-type>VARCHAR2(80)|0</data-type>
+    </column>
+    <index id="81" parent="26" name="SYS_C007135">
+      <name-surrogate>1</name-surrogate>
+      <object-id>20171</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ID</columns>
+      <desc-columns />
+      <unique>1</unique>
+      <tablespace-name>SYSTEM</tablespace-name>
+    </index>
+    <key id="82" parent="26" name="SYS_C007135">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ID</columns>
+      <initially-deferred>1</initially-deferred>
+      <underlying-index>SYS_C007135</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="83" parent="27" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="84" parent="27" name="FNAME">
+      <data-type>VARCHAR2(30)|0</data-type>
+    </column>
+    <column id="85" parent="27" name="LNAME">
+      <data-type>VARCHAR2(50)|0</data-type>
+    </column>
+    <column id="86" parent="27" name="NICKNAME">
+      <data-type>VARCHAR2(50)|0</data-type>
+    </column>
+    <index id="87" parent="27" name="SYS_C007136">
+      <name-surrogate>1</name-surrogate>
+      <object-id>20173</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ID</columns>
+      <desc-columns />
+      <unique>1</unique>
+      <tablespace-name>SYSTEM</tablespace-name>
+    </index>
+    <key id="88" parent="27" name="SYS_C007136">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ID</columns>
+      <initially-deferred>1</initially-deferred>
+      <underlying-index>SYS_C007136</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="89" parent="28" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="90" parent="28" name="ALBUMID">
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="91" parent="28" name="TITLE">
+      <data-type>VARCHAR2(50)|0</data-type>
+    </column>
+    <column id="92" parent="28" name="YEARNOMINATED">
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <index id="93" parent="28" name="SYS_C007141">
+      <name-surrogate>1</name-surrogate>
+      <object-id>20177</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ID</columns>
+      <desc-columns />
+      <unique>1</unique>
+      <tablespace-name>SYSTEM</tablespace-name>
+    </index>
+    <key id="94" parent="28" name="SYS_C007141">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ID</columns>
+      <initially-deferred>1</initially-deferred>
+      <underlying-index>SYS_C007141</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="95" parent="28" name="SYS_C007142">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ALBUMID</columns>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>~.ALBUM.SYS_C007138</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <check id="96" parent="28" name="SYS_C007140">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>YEARNOMINATED</columns>
+      <predicate>yearNominated &gt; 1900 AND yearNominated &lt; 2018</predicate>
+    </check>
+    <column id="97" parent="29" name="SONGID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="98" parent="29" name="LABELID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <index id="99" parent="29" name="SYS_C007153">
+      <name-surrogate>1</name-surrogate>
+      <object-id>20183</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>SONGID
+LABELID</columns>
+      <desc-columns />
+      <unique>1</unique>
+      <tablespace-name>SYSTEM</tablespace-name>
+    </index>
+    <key id="100" parent="29" name="SYS_C007153">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>SONGID
+LABELID</columns>
+      <initially-deferred>1</initially-deferred>
+      <underlying-index>SYS_C007153</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="101" parent="29" name="SYS_C007154">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>SONGID</columns>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>~.SONG.SYS_C007141</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="102" parent="29" name="SYS_C007155">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>LABELID</columns>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>~.LABEL.SYS_C007135</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <column id="103" parent="30" name="SONGID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="104" parent="30" name="PERSONID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="105" parent="30" name="ROLE">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR2(20)|0</data-type>
+    </column>
+    <index id="106" parent="30" name="SYS_C007159">
+      <name-surrogate>1</name-surrogate>
+      <object-id>20187</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>SONGID
+PERSONID
+ROLE</columns>
+      <desc-columns />
+      <unique>1</unique>
+      <tablespace-name>SYSTEM</tablespace-name>
+    </index>
+    <key id="107" parent="30" name="SYS_C007159">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>SONGID
+PERSONID
+ROLE</columns>
+      <initially-deferred>1</initially-deferred>
+      <underlying-index>SYS_C007159</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="108" parent="30" name="SYS_C007160">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>SONGID</columns>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>~.SONG.SYS_C007141</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="109" parent="30" name="SYS_C007161">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>PERSONID</columns>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>~.PERSON.SYS_C007136</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <column id="110" parent="31" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="111" parent="31" name="FNAME">
+      <data-type>VARCHAR2(50)|0</data-type>
+    </column>
+    <column id="112" parent="31" name="LNAME">
+      <data-type>VARCHAR2(50)|0</data-type>
+    </column>
+    <index id="113" parent="31" name="SYS_C007166">
+      <name-surrogate>1</name-surrogate>
+      <object-id>20191</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ID</columns>
+      <desc-columns />
+      <unique>1</unique>
+      <tablespace-name>SYSTEM</tablespace-name>
+    </index>
+    <key id="114" parent="31" name="SYS_C007166">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ID</columns>
+      <initially-deferred>1</initially-deferred>
+      <underlying-index>SYS_C007166</underlying-index>
+      <primary>1</primary>
+    </key>
+    <check id="115" parent="31" name="SYS_C007165">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>ID</columns>
+      <predicate>ID &lt; 9999999</predicate>
+    </check>
+    <column id="116" parent="32" name="AWARDID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <column id="117" parent="32" name="STUDENTID">
+      <mandatory>1</mandatory>
+      <data-type>NUMBER(*)|0</data-type>
+    </column>
+    <index id="118" parent="32" name="SYS_C007167">
+      <name-surrogate>1</name-surrogate>
+      <object-id>20193</object-id>
+      <created-timestamp>2017-05-09.19:30:12</created-timestamp>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>AWARDID
+STUDENTID</columns>
+      <desc-columns />
+      <unique>1</unique>
+      <tablespace-name>SYSTEM</tablespace-name>
+    </index>
+    <key id="119" parent="32" name="SYS_C007167">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>AWARDID
+STUDENTID</columns>
+      <initially-deferred>1</initially-deferred>
+      <underlying-index>SYS_C007167</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="120" parent="32" name="SYS_C007168">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>AWARDID</columns>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>~.AWARD.SYS_C007144</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="121" parent="32" name="SYS_C007169">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-05-09.19:30:12</modified-timestamp>
+      <columns>STUDENTID</columns>
+      <initially-deferred>1</initially-deferred>
+      <ref-key>~.STUDENT.SYS_C007166</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>delete</cascade-delete-rule>
+    </foreign-key>
+  </database-model>
+</dataSource>
