@@ -49,45 +49,46 @@ public class LoadDB {
 
                 store.put(rank, rankVal);
             }
-        }
-        movies.close();
 
-        //Load actors
-        ResultSet actors = jdbcStatement.executeQuery("SELECT id, firstName, lastName FROM Actor");
-        if (actors != null) {
-            while (actors.next()) {
+            movies.close();
+
+            //Load actors
+            ResultSet actors = jdbcStatement.executeQuery("SELECT id, firstName, lastName FROM Actor");
+            if (actors != null) {
+                while (actors.next()) {
 //            System.out.println(actors.getInt(1) + "\t" + actors.getString(2) + "\t"
 //                    + actors.getString(3));
-                //Key Structure by Name
-                Key firstName = Key.createKey(Arrays.asList("actor", actors.getString(1)), Arrays.asList("firstName"));
-                Value firstNameVal = Value.createValue(actors.getString(2).getBytes());
-                store.put(firstName, firstNameVal);
+                    //Key Structure by Name
+                    Key firstName = Key.createKey(Arrays.asList("actor", actors.getString(1)), Arrays.asList("firstName"));
+                    Value firstNameVal = Value.createValue(actors.getString(2).getBytes());
+                    store.put(firstName, firstNameVal);
 
-                Key lastName = Key.createKey(Arrays.asList("actor", actors.getString(1)), Arrays.asList("lastName"));
-                Value lastNameVal = Value.createValue(actors.getString(3).getBytes());
-                store.put(lastName, lastNameVal);
+                    Key lastName = Key.createKey(Arrays.asList("actor", actors.getString(1)), Arrays.asList("lastName"));
+                    Value lastNameVal = Value.createValue(actors.getString(3).getBytes());
+                    store.put(lastName, lastNameVal);
+
+                }
             }
-        }
-        actors.close();
+            actors.close();
 
-        //Load roles
-        ResultSet roles = jdbcStatement.executeQuery("SELECT actorId, movieId, role FROM Role");
-        if (roles != null) {
-            while (roles.next()) {
+            //Load roles
+            ResultSet roles = jdbcStatement.executeQuery("SELECT actorId, movieId, role FROM Role");
+            if (roles != null) {
+                while (roles.next()) {
 //            System.out.println(roles.getInt(1) + "\t" + roles.getString(2) + "\t"
 //                    + roles.getString(3));
 
-                Key role = Key.createKey(Arrays.asList("role", roles.getString(1), roles.getString(2)), Arrays.asList("role"));
-                Value roleVal = Value.createValue(roles.getString(3).getBytes());
-                store.put(role, roleVal);
+                    Key role = Key.createKey(Arrays.asList("role", roles.getString(1), roles.getString(2)), Arrays.asList("rolename"));
+                    Value roleVal = Value.createValue(roles.getString(3).getBytes());
+                    store.put(role, roleVal);
+                }
             }
+            roles.close();
+
+
+            jdbcStatement.close();
+            jdbcConnection.close();
+            store.close();
         }
-        roles.close();
-
-
-        jdbcStatement.close();
-        jdbcConnection.close();
-        store.close();
     }
-
 }

@@ -4,6 +4,8 @@ import java.sql.*;
 import java.util.Arrays;
 import java.util.Map;
 
+import static java.sql.JDBCType.NULL;
+
 /**
  * Created by kr29 on 5/11/2017.
  */

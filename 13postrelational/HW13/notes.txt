@@ -4,3 +4,36 @@ KVLite is a Key-Value database.
 b.
 I would probably recommend a Document Store database, as IMDB has a great deal of many-to-many relationships that require a great deal of intermediary tables.
 A document store would allow you to see and update values in a single document without having to worry about updating intermediary tables.
+c.
+
+
+
+
+
+ResultSet roles = jdbcStatement.executeQuery("SELECT actorId, movieId, role FROM Role");
+            if (roles != null) {
+                HashMap<String, String> roleList = new HashMap<>();
+
+                while (roles.next()) {
+//              System.out.println(roles.getInt(1) + "\t" + roles.getString(2) + "\t"
+//                    + roles.getString(3));
+
+                    List<String> roleKey = Arrays.asList("movie", roles.getString(2), "actor", roles.getString(1));
+                    String keyString = String.join(",", roleKey);
+
+                    if (roleList.containsKey(roleKey)) {
+                        roleList.put(keyString, roleList.get(roleKey) + ", " + roles.getString(3));
+                    } else {
+                        roleList.put(keyString, roles.getString(3));
+                    }
+
+                    for(String key: roleList.keySet()) {
+                        String[] tokens = key.split(",");
+                        Key rKey = Key.createKey(Arrays.asList(tokens), Arrays.asList("roles"));
+                        Value roleVal = Value.createValue(roleList.get(key).getBytes());
+                        store.put(rKey, roleVal);
+                    }
+
+                }
+            }
+            roles.close();
