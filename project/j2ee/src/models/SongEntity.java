@@ -57,7 +57,7 @@ public class SongEntity {
     }
 
     @ManyToMany
-    @JoinTable(name = "SONGPERSON", //schema = ?
+    @JoinTable(name = "SONGPERSON",
         joinColumns = @JoinColumn(name = "SONGID", referencedColumnName = "ID", nullable = false),
         inverseJoinColumns = @JoinColumn(name = "PERSONID", referencedColumnName = "ID", nullable = false))
     public List<PersonEntity> getPeople() {
