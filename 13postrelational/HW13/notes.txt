@@ -1,0 +1,6 @@
+2.
+a.
+KVLite is a Key-Value database.
+b.
+I would probably recommend a Document Store database, as IMDB has a great deal of many-to-many relationships that require a great deal of intermediary tables.
+A document store would allow you to see and update values in a single document without having to worry about updating intermediary tables.

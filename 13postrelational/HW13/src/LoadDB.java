@@ -24,50 +24,63 @@ public class LoadDB {
 
         //Load movies
         ResultSet movies = jdbcStatement.executeQuery("SELECT id, name, year, rank FROM Movie");
-        while (movies.next()) {
-            //System.out.println(movies.getInt(1) + "\t" + movies.getString(2) + "\t"
-                    //+ movies.getString(3));
+        if (movies != null) {
+            while (movies.next()) {
+                //System.out.println(movies.getInt(1) + "\t" + movies.getString(2) + "\t"
+                //+ movies.getString(3));
 
-            //Key Structure by Name
-            Key name = Key.createKey(Arrays.asList("movie", movies.getString(1)), Arrays.asList("name"));
-            Value nameVal = Value.createValue(movies.getString(2).getBytes());
-            store.put(name, nameVal);
+                //Key Structure by Name
+                Key name = Key.createKey(Arrays.asList("movie", movies.getString(1)), Arrays.asList("name"));
+                Value nameVal = Value.createValue(movies.getString(2).getBytes());
+                store.put(name, nameVal);
 
-            Key year = Key.createKey(Arrays.asList("movie", movies.getString(1)), Arrays.asList("year"));
-            Value yearVal = Value.createValue(movies.getString(3).getBytes());
-            store.put(year, yearVal);
+                Key year = Key.createKey(Arrays.asList("movie", movies.getString(1)), Arrays.asList("year"));
+                Value yearVal = Value.createValue(movies.getString(3).getBytes());
+                store.put(year, yearVal);
 
-            Key rank = Key.createKey(Arrays.asList("movie", movies.getString(1)), Arrays.asList("rank"));
-            Value rankVal;
-            //Handle the no score exception
-            if (movies.getString(4) == null){
-                rankVal = Value.createValue("".getBytes());
-            } else {
-                rankVal = Value.createValue(movies.getString(4).getBytes());
+                Key rank = Key.createKey(Arrays.asList("movie", movies.getString(1)), Arrays.asList("rank"));
+                Value rankVal;
+                //Handle the no score exception
+                if (movies.getString(4) == null) {
+                    rankVal = Value.createValue("".getBytes());
+                } else {
+                    rankVal = Value.createValue(movies.getString(4).getBytes());
+                }
+
+                store.put(rank, rankVal);
             }
-
-            store.put(rank, rankVal);
         }
         movies.close();
 
         //Load actors
-        ResultSet actors = jdbcStatement.executeQuery("SELECT id, firstName, lastName, gender FROM Actor");
-        while (actors.next()) {
+        ResultSet actors = jdbcStatement.executeQuery("SELECT id, firstName, lastName FROM Actor");
+        if (actors != null) {
+            while (actors.next()) {
 //            System.out.println(actors.getInt(1) + "\t" + actors.getString(2) + "\t"
 //                    + actors.getString(3));
-            //Key Structure by Name
-            Key firstName = Key.createKey(Arrays.asList("actor", actors.getString(1)), Arrays.asList("firstName"));
-            Value firstNameVal = Value.createValue(movies.getString(2).getBytes());
-            store.put(firstName, firstNameVal);
+                //Key Structure by Name
+                Key firstName = Key.createKey(Arrays.asList("actor", actors.getString(1)), Arrays.asList("firstName"));
+                Value firstNameVal = Value.createValue(actors.getString(2).getBytes());
+                store.put(firstName, firstNameVal);
 
+                Key lastName = Key.createKey(Arrays.asList("actor", actors.getString(1)), Arrays.asList("lastName"));
+                Value lastNameVal = Value.createValue(actors.getString(3).getBytes());
+                store.put(lastName, lastNameVal);
+            }
         }
         actors.close();
 
         //Load roles
         ResultSet roles = jdbcStatement.executeQuery("SELECT actorId, movieId, role FROM Role");
-        while (roles.next()) {
-            System.out.println(roles.getInt(1) + "\t" + roles.getString(2) + "\t"
-                    + roles.getString(3));
+        if (roles != null) {
+            while (roles.next()) {
+//            System.out.println(roles.getInt(1) + "\t" + roles.getString(2) + "\t"
+//                    + roles.getString(3));
+
+                Key role = Key.createKey(Arrays.asList("role", roles.getString(1), roles.getString(2)), Arrays.asList("role"));
+                Value roleVal = Value.createValue(roles.getString(3).getBytes());
+                store.put(role, roleVal);
+            }
         }
         roles.close();
 
