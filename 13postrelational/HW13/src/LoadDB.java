@@ -46,6 +46,7 @@ public class LoadDB {
 
                 store.put(rank, rankVal);
             }
+        }
 
             movies.close();
 
@@ -82,6 +83,5 @@ public class LoadDB {
             jdbcStatement.close();
             jdbcConnection.close();
             store.close();
-        }
     }
 }
