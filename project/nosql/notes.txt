@@ -1,0 +1,8 @@
+The GetAlbumPeople program is useful for if you want to see all of the people who worked on an album. This works well in a noSQL solution because
+in a relational database, you would have to do a three-table JOIN in order to get all of this information. If I could get a sorted list working, I would probably
+have sorted the albums by year. 
+
+
+I think if I were more comfortable using it, KVLite would be an ideal type of database for my application. Because I have so many many-to-many 
+relationships and intermediary tables, it would be nice to view data that would normally require a large amount of JOINs in a much simpler, quicker way.
+However, because I am way more comfortable with relational databases right now, I would still to prefer to work with it that way.
