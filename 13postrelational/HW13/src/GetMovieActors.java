@@ -31,7 +31,7 @@ public class GetMovieActors {
         Key majorKeyPathOnly = Key.createKey(Arrays.asList("actor", actorId));
         Map<Key, ValueVersion> fields = store.multiGet(majorKeyPathOnly, null, null);
         for (Map.Entry<Key, ValueVersion> field : fields.entrySet()) {
-            name = new String(field.getValue().getValue().getValue());
+            name += new String(field.getValue().getValue().getValue()) + " ";
         }
         return name;
     }

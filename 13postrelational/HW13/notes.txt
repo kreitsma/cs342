@@ -5,35 +5,10 @@ b.
 I would probably recommend a Document Store database, as IMDB has a great deal of many-to-many relationships that require a great deal of intermediary tables.
 A document store would allow you to see and update values in a single document without having to worry about updating intermediary tables.
 c.
-
-
-
-
-
-ResultSet roles = jdbcStatement.executeQuery("SELECT actorId, movieId, role FROM Role");
-            if (roles != null) {
-                HashMap<String, String> roleList = new HashMap<>();
-
-                while (roles.next()) {
-//              System.out.println(roles.getInt(1) + "\t" + roles.getString(2) + "\t"
-//                    + roles.getString(3));
-
-                    List<String> roleKey = Arrays.asList("movie", roles.getString(2), "actor", roles.getString(1));
-                    String keyString = String.join(",", roleKey);
-
-                    if (roleList.containsKey(roleKey)) {
-                        roleList.put(keyString, roleList.get(roleKey) + ", " + roles.getString(3));
-                    } else {
-                        roleList.put(keyString, roles.getString(3));
-                    }
-
-                    for(String key: roleList.keySet()) {
-                        String[] tokens = key.split(",");
-                        Key rKey = Key.createKey(Arrays.asList(tokens), Arrays.asList("roles"));
-                        Value roleVal = Value.createValue(roleList.get(key).getBytes());
-                        store.put(rKey, roleVal);
-                    }
-
-                }
-            }
-            roles.close();
+In my code, you could not easily do it. Because the major key for the 'roles' table is based on the movieId, not the actorId, you can get actors in a movie, but
+not the other way around. You would essentially have to change the major key for roles, then you could implement something similar to GetMovieActors.
+d.
+What this means in this case is that the way we created the key-value pairs was completely up to us; KVlite didn't force us to create any particular kind of schema.
+For instance, as I mentioned in the previous question, I made the major key for roles the movieId, but it could easily have been the actorId instead--it all depends
+on how your application will use the data, and whoever designs the key-value pairs can create them as they see fit, not according to a predetermined schema with rules
+enforced on it by a DBMS.
