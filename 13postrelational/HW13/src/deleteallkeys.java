@@ -16,7 +16,7 @@ class deleteallkeys {
         try {
 
             String storeName = "kvstore";
-            String hostName = "hoare";
+            String hostName = "goldberg";
             String hostPort = "5000";
             KVStore store;
 

@@ -26,9 +26,6 @@ public class LoadDB {
         ResultSet movies = jdbcStatement.executeQuery("SELECT id, name, year, rank FROM Movie");
         if (movies != null) {
             while (movies.next()) {
-                //System.out.println(movies.getInt(1) + "\t" + movies.getString(2) + "\t"
-                //+ movies.getString(3));
-
                 //Key Structure by Name
                 Key name = Key.createKey(Arrays.asList("movie", movies.getString(1)), Arrays.asList("name"));
                 Value nameVal = Value.createValue(movies.getString(2).getBytes());
@@ -56,8 +53,6 @@ public class LoadDB {
             ResultSet actors = jdbcStatement.executeQuery("SELECT id, firstName, lastName FROM Actor");
             if (actors != null) {
                 while (actors.next()) {
-//            System.out.println(actors.getInt(1) + "\t" + actors.getString(2) + "\t"
-//                    + actors.getString(3));
                     //Key Structure by Name
                     Key firstName = Key.createKey(Arrays.asList("actor", actors.getString(1)), Arrays.asList("firstName"));
                     Value firstNameVal = Value.createValue(actors.getString(2).getBytes());
@@ -72,14 +67,12 @@ public class LoadDB {
             actors.close();
 
             //Load roles
-            ResultSet roles = jdbcStatement.executeQuery("SELECT actorId, movieId, role FROM Role");
+            ResultSet roles = jdbcStatement.executeQuery("SELECT movieId, actorId, role FROM Role");
             if (roles != null) {
                 while (roles.next()) {
-//            System.out.println(roles.getInt(1) + "\t" + roles.getString(2) + "\t"
-//                    + roles.getString(3));
 
-                    Key role = Key.createKey(Arrays.asList("role", roles.getString(1), roles.getString(2)), Arrays.asList("rolename"));
-                    Value roleVal = Value.createValue(roles.getString(3).getBytes());
+                    Key role = Key.createKey(Arrays.asList("role", roles.getString(1)), Arrays.asList(roles.getString(3)));
+                    Value roleVal = Value.createValue(roles.getString(2).getBytes());
                     store.put(role, roleVal);
                 }
             }
