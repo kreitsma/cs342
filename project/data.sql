@@ -135,7 +135,7 @@ INSERT INTO Person VALUES (102, 'Ian', 'Kirkpatrick', null);
 INSERT INTO Person VALUES (103, null, null, 'Maejor');
 INSERT INTO Person VALUES (104, null, null, 'MdL');
 INSERT INTO Person VALUES (105, 'Jeremy', 'Snyder', null);
-INSERT INTO Person VALUES (106, null, null, '& S O U N D Z');
+INSERT INTO Person VALUES (106, null, null, chr(38) || ' S O U N D Z');
 INSERT INTO Person VALUES (107, 'Simon', 'Cohen', null);
 INSERT INTO Person VALUES (108, 'Joshua', 'Connolly', null);
 INSERT INTO Person VALUES (109, 'Mark', 'Goodchild', 'Exit');

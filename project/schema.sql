@@ -1,5 +1,4 @@
 --Entity tables
-
 create table Artist (
 	ID integer PRIMARY KEY,
 	name varchar(100)
@@ -15,8 +14,8 @@ create table Person (
 	ID integer PRIMARY KEY,
 	fName varchar(30) NULL,
 	lName varchar(50) NULL,
-	nickName varchar(50) NULL
-	--Need a check to make sure all three are not null at once
+	nickName varchar(50) NULL,
+	CONSTRAINT infoPresent CHECK (NOT (fName IS NULL AND lName IS NULL AND nickName IS NULL))
 	);
 	
 create table Album (
@@ -38,11 +37,11 @@ create table Song (
 	);
 	
 	
-create table Award ( --Get rid of ID and make year and category a super primary key?
+create table Award (
 	ID integer PRIMARY KEY,
 	category varchar(50),
 	yearReceived integer,
-	status varchar(7), --'winner' or 'nominee'
+	status varchar(7),
 	votes integer,
 	AlbumID integer,
 	SongID integer,
@@ -50,8 +49,9 @@ create table Award ( --Get rid of ID and make year and category a super primary 
 	FOREIGN KEY (AlbumID) REFERENCES Album(ID) ON DELETE CASCADE,
 	FOREIGN KEY (SongID) REFERENCES Song(ID) ON DELETE CASCADE,
 	FOREIGN KEY (ArtistID) REFERENCES Artist(ID) ON DELETE CASCADE,
-	CHECK (yearReceived > 1900 AND yearReceived < 2018)
-	--Check constraint for award categories
+	CHECK (yearReceived > 1900 AND yearReceived < 2018),
+	CONSTRAINT ctg CHECK (category IN ('Record of the Year', 'Album of the Year', 'Best New Artist')),
+	CONSTRAINT st CHECK (status IN ('winner', 'nominee'))
 	);
 	
 --Intermediary tables
@@ -104,7 +104,7 @@ create table Student (
 	ID integer PRIMARY KEY,
 	fName varchar(50),
 	lName varchar(50),
-	CHECK (ID < 9999999)
+	CONSTRAINT validID CHECK (ID < 9999999)
 	);
 	
 create table Vote (
@@ -113,7 +113,8 @@ create table Vote (
 	FOREIGN KEY (AwardID) REFERENCES Award(ID) ON DELETE CASCADE,
 	FOREIGN KEY (StudentID) REFERENCES Student(ID) ON DELETE CASCADE,
 	PRIMARY KEY (AwardID, StudentID)
-	);
+	);	
+
 	
 	
 	

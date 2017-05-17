@@ -5,6 +5,7 @@ to look up the real names of some producers.
 that do not have many attributes (but are linked by many intermediary tables), there is only one functional dependency,
 and there are no multivalued dependencies. While this does make my access time a bit slower, it was necessary to create
 all of these separate tables because of the many possibilities that multiple entities have to be linked to one another.
+	
 	My schema is in 4NF. The functional dependencies are:
 	Person.nickName -> Person.fName, Person.lName
 	It is trivial to mention the primary key ID's of each table, as by their nature being primary keys they satisfy the LHS 

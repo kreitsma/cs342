@@ -23,9 +23,10 @@ SELECT Song.title, Album.name, Artist.name, Person.fName, Person.lName, Person.n
 --to let the user see a full list of nominated songs, along with who wrote them, what album they're from, and their
 --mastering engineers.
 
---Get a full list of songs and their album, even if they do not belong to an album
-SELECT Song.title, Album.name FROM Song
-	LEFT OUTER JOIN Album ON Song.AlbumID = Album.ID;
+--Get a full list of songs and their album (and artist), even if they do not belong to an album
+SELECT Song.title, Album.name, Artist.name FROM Album
+	INNER JOIN Artist ON Album.ArtistID = Artist.ID
+	LEFT OUTER JOIN Song ON Song.AlbumID = Album.ID;
 --This could be used to measure statistics such as what percent of nominees are singles vs. tracks from albums.
 
 --Gets all of the people who are known only by their nickname

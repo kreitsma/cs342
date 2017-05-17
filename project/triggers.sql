@@ -5,10 +5,12 @@ DECLARE
 	winner INTEGER;
 	alreadyWinner EXCEPTION;
 BEGIN
-	SELECT COUNT(*) INTO winner FROM Award WHERE category = :new.category AND yearReceived = :new.yearReceived;
+	IF :new.status = 'winner' THEN
+		SELECT COUNT(*) INTO winner FROM Award WHERE category = :new.category AND yearReceived = :new.yearReceived AND status = 'winner';
 	
-	IF winner = 1 THEN
-		RAISE alreadyWinner;
+		IF winner = 1 THEN
+			RAISE alreadyWinner;
+		END IF;
 	END IF;
 	
 EXCEPTION
