@@ -11,6 +11,7 @@ drop table Album;
 drop table Person;
 drop table Label;
 drop table Artist;
+drop table AwardTypes;
 
 
 

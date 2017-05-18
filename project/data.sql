@@ -1,4 +1,9 @@
 --Data
+INSERT INTO AwardTypes VALUES ('Record of the Year');
+INSERT INTO AwardTypes VALUES ('Album of the Year');
+INSERT INTO AwardTypes VALUES ('Best New Artist');
+
+
 INSERT INTO Artist VALUES (1, 'Adele');
 INSERT INTO Artist VALUES (2, 'Beyonce');
 INSERT INTO Artist VALUES (3, 'Lukas Graham');

@@ -1,4 +1,9 @@
 --Entity tables
+--Legal value table for awards
+create table AwardTypes (
+	name varchar(20) PRIMARY KEY
+	);
+
 create table Artist (
 	ID integer PRIMARY KEY,
 	name varchar(100)
@@ -46,11 +51,11 @@ create table Award (
 	AlbumID integer,
 	SongID integer,
 	ArtistID integer,
+	FOREIGN KEY (category) REFERENCES AwardTypes(name) ON DELETE SET NULL,
 	FOREIGN KEY (AlbumID) REFERENCES Album(ID) ON DELETE CASCADE,
 	FOREIGN KEY (SongID) REFERENCES Song(ID) ON DELETE CASCADE,
 	FOREIGN KEY (ArtistID) REFERENCES Artist(ID) ON DELETE CASCADE,
 	CHECK (yearReceived > 1900 AND yearReceived < 2018),
-	CONSTRAINT ctg CHECK (category IN ('Record of the Year', 'Album of the Year', 'Best New Artist')),
 	CONSTRAINT st CHECK (status IN ('winner', 'nominee'))
 	);
 	
@@ -106,6 +111,7 @@ create table Student (
 	lName varchar(50),
 	CONSTRAINT validID CHECK (ID < 9999999)
 	);
+	--This is mostly theoretical--I didn't add data to these tables for privacy reasons.
 	
 create table Vote (
 	AwardID integer,
