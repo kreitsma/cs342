@@ -12,6 +12,11 @@ public class SonglabelEntity {
     private long songid;
     private long labelid;
 
+    public SonglabelEntity (long songId, long labelId) {
+        this.songid = songId;
+        this.labelid = labelId;
+    }
+
     @Id
     @Column(name = "SONGID")
     public long getSongid() {

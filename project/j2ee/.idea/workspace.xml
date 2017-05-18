@@ -66,11 +66,41 @@
       <file leaf-file-name="GrammyResource.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GrammyResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="749">
-              <caret line="153" column="80" selection-start-line="153" selection-start-column="80" selection-end-line="153" selection-end-column="80" />
+            <state relative-caret-position="511">
+              <caret line="206" column="55" selection-start-line="206" selection-start-column="55" selection-end-line="206" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlbumpersonEntity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/AlbumpersonEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SonglabelEntity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/SonglabelEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlbumpersonEntityPK.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/AlbumpersonEntityPK.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -104,10 +134,12 @@
       <list>
         <option value="$PROJECT_DIR$/src/models/SongEntity.java" />
         <option value="$PROJECT_DIR$/src/MyApplication.java" />
-        <option value="$PROJECT_DIR$/src/GrammyResource.java" />
-        <option value="$PROJECT_DIR$/src/models/AlbumpersonEntityPK.java" />
         <option value="$PROJECT_DIR$/src/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/src/models/SonglabelEntityPK.java" />
+        <option value="$PROJECT_DIR$/src/models/AlbumpersonEntityPK.java" />
+        <option value="$PROJECT_DIR$/src/models/SonglabelEntity.java" />
+        <option value="$PROJECT_DIR$/src/models/AlbumpersonEntity.java" />
+        <option value="$PROJECT_DIR$/src/GrammyResource.java" />
       </list>
     </option>
   </component>
@@ -129,6 +161,25 @@
     <option name="y" value="-8" />
     <option name="width" value="1616" />
     <option name="height" value="876" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Duplicates</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -241,7 +292,7 @@
     <property name="JPA.DatabaseSchemaImportDialog" value="c8704960-1b95-42d4-a1e4-bc0d1b57feb9" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -772,12 +823,12 @@
       <workItem from="1494371421493" duration="4586000" />
       <workItem from="1494516977484" duration="1153000" />
       <workItem from="1494518297433" duration="44000" />
-      <workItem from="1495118797465" duration="4880000" />
+      <workItem from="1495118797465" duration="7433000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10663000" />
+    <option name="totallyTimeSpent" value="13216000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
@@ -977,18 +1028,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/AlbumpersonEntityPK.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/META-INF/persistence.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="66" selection-start-line="8" selection-start-column="66" selection-end-line="8" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/AlbumpersonEntityPK.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1004,10 +1055,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/SonglabelEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/AlbumpersonEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GrammyResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="749">
-          <caret line="153" column="80" selection-start-line="153" selection-start-column="80" selection-end-line="153" selection-end-column="80" />
+        <state relative-caret-position="511">
+          <caret line="206" column="55" selection-start-line="206" selection-start-column="55" selection-end-line="206" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

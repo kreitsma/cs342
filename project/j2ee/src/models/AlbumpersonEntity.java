@@ -13,6 +13,12 @@ public class AlbumpersonEntity {
     private long personid;
     private String role;
 
+    public AlbumpersonEntity (long albumId, long personId, String role) {
+        this.albumid = albumId;
+        this.personid = personId;
+        this.role = role;
+    }
+
     @Id
     @Column(name = "ALBUMID")
     public long getAlbumid() {

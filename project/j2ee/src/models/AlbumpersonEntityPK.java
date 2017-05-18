@@ -12,6 +12,12 @@ public class AlbumpersonEntityPK implements Serializable {
     private long personid;
     private String role;
 
+    public AlbumpersonEntityPK(long albumId, long personId, String role) {
+        this.albumid = albumId;
+        this.personid = personId;
+        this.role = role;
+    }
+
     @Column(name = "ALBUMID")
     @Id
     public long getAlbumid() {
