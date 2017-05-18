@@ -7,6 +7,7 @@
         <setting name="provider-name" value="" />
         <datasource-mapping>
           <factory-entry name="cpdbEntities" value="c8704960-1b95-42d4-a1e4-bc0d1b57feb9" />
+          <factory-entry name="grammyEntities" />
           <factory-entry name="noname-a.xml@0" value="c8704960-1b95-42d4-a1e4-bc0d1b57feb9" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />

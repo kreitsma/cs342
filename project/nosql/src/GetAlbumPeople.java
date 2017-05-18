@@ -11,6 +11,7 @@ public class GetAlbumPeople {
 
     public static void main(String[] args) throws SQLException {
 
+        //Open store
         KVStore store = KVStoreFactory.getStore(new KVStoreConfig("kvstore", "localhost:5000"));
         System.out.println("Table: album\nID: 1");
 
