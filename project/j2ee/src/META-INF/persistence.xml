@@ -2,19 +2,6 @@
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
 
     <persistence-unit name="grammyEntities" transaction-type="JTA">
-        <class>models.AlbumEntity</class>
-        <class>models.AlbumlabelEntity</class>
-        <class>models.AlbumpersonEntity</class>
-        <class>models.ArtistEntity</class>
-        <class>models.ArtistsongEntity</class>
-        <class>models.AwardEntity</class>
-        <class>models.LabelEntity</class>
-        <class>models.PersonEntity</class>
-        <class>models.SongEntity</class>
-        <class>models.SonglabelEntity</class>
-        <class>models.SongpersonEntity</class>
-        <class>models.StudentEntity</class>
-        <class>models.VoteEntity</class>
         <properties>
             <property name="eclipselink.jdbc.url" value="jdbc:oracle:thin:@//localhost:1521/XE"/>
             <property name="eclipselink.jdbc.driver" value="oracle.jdbc.OracleDriver"/>

@@ -4,15 +4,16 @@ import java.sql.*;
 import java.util.Arrays;
 
 /**
- * This program used JDBC to query all the movies from the IMDB Movies table.
+ * This program used JDBC to query all the movies from the Grammy Albums table.
  * Include ojdbc6.jar (from the J2EE library) in the system path to support the JDBC functions.
  *
- * @author kvlinden
- * @version Spring, 2015
+ * @author kr29, based on kvlinden
+ * @version Spring, 2017
  */
 public class LoadDB {
 
     public static void main(String[] args) throws SQLException {
+		//Configure store and connection
         KVStore store = KVStoreFactory.getStore(new KVStoreConfig("kvstore", "localhost:5000"));
         Connection jdbcConnection = DriverManager.getConnection(
                 "jdbc:oracle:thin:@localhost:1521:xe", "project", "kr29");

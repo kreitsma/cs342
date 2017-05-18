@@ -5,11 +5,17 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
- * Created by kr29 on 5/9/2017.
+ * Created by kr29 on 5/18/2017.
  */
 public class SonglabelEntityPK implements Serializable {
     private long songid;
     private long labelid;
+
+    public SonglabelEntityPK (long songId, long labelId) {
+        this.songid = songId;
+        this.labelid = labelId;
+    }
+
 
     @Column(name = "SONGID")
     @Id

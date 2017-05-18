@@ -1,4 +1,4 @@
-import models.SongEntity;
+import models.*;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -11,10 +11,9 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 /**
- * This stateless session bean serves as a RESTful resource handler for the CPDB.
- * It uses a container-managed entity manager.
+ * RESTful service handler for the Grammys database.
  *
- * @author kvlinden
+ * @author kr29, based on 'HelloJDBC' by kvlinden
  * @version Spring, 2017
  */
 @Stateless
@@ -40,6 +39,10 @@ public class GrammyResource {
         return "Hello, JPA!";
     }
 
+    /**
+     * Get the information of a song with a given ID.
+     * @return The song's name, artist, album (if applicable), label (if applicable), and the people who worked on it
+     */
     @GET
     @Path("song/{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -47,6 +50,10 @@ public class GrammyResource {
         return em.find(SongEntity.class, id);
     }
 
+    /**
+     * Put (modify) the information of a song with a given ID.
+     * @return success message or error message
+     */
     @PUT
     @Path("song/{id}")
     @Consumes("models/songentity")
@@ -61,6 +68,10 @@ public class GrammyResource {
         }
     }
 
+    /**
+     * Post the information of a song with a given ID.
+     * @return success message or error message
+     */
     @POST
     @Path("songs")
     @Consumes("models/songentity")
@@ -79,6 +90,10 @@ public class GrammyResource {
         }
     }
 
+    /**
+     * Delete the information of a song with a given ID.
+     * @return success message or error message
+     */
     @DELETE
     @Path("song/{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -94,5 +109,52 @@ public class GrammyResource {
         }
     }
 
+    /**
+     * Link a Label of the given ID to a  Song of the given ID.
+     * @return success message or error message
+     */
+    @POST
+    @Path("song/{sid}/label/{lid}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String addSongLabel(@PathParam("sid") long songId, @PathParam("lid") long labelId)
+    {
+        SongEntity song = em.find(SongEntity.class, songId);
+        LabelEntity label = em.find(LabelEntity.class, labelId);
+
+        if (song == null)
+            return "Song not found";
+        else if (label == null)
+                return "Label not found";
+
+        SonglabelEntityPK pk = new SonglabelEntityPK(songId, labelId);
+        SonglabelEntity songlabel = em.find(SonglabelEntity.class, pk);
+
+        em.persist(songlabel);
+        return("Label successfully added to song!");
+    }
+
+    /**
+     * Change the role of a Person linked to an Album. NOTE - since role is part of the primary key, ensure that
+     * the person does not already exist in the desired role on the Album.
+     * @return success message or error message
+     */
+    @PUT
+    @Path("album/{aid}/person/{pid}/{role}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String changePersonAlbumRole(@PathParam("aid") long albumId, @PathParam("pid") long personId, @PathParam("role") String role)
+    {
+        AlbumEntity album = em.find(AlbumEntity.class, albumId);
+        LabelEntity person = em.find(LabelEntity.class, personId);
+
+        if (album == null)
+            return "Album not found";
+        else if (person == null)
+            return "Person not found";
+
+        AlbumpersonEntityPK pk = new AlbumpersonEntityPK(albumId, personId, role);
+        SonglabelEntity songlabel = em.find(SonglabelEntity.class, pk);
+
+        songlabel.
+    }
 
 }

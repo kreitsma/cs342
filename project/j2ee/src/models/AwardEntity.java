@@ -3,13 +3,12 @@ package models;
 import javax.persistence.*;
 
 /**
- * Created by kr29 on 5/9/2017.
+ * Created by kr29 on 5/18/2017.
  */
 @Entity
 @Table(name = "AWARD", schema = "PROJECT", catalog = "")
 public class AwardEntity {
     private long id;
-    private String category;
     private Long yearreceived;
     private String status;
     private Long votes;
@@ -22,16 +21,6 @@ public class AwardEntity {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    @Basic
-    @Column(name = "CATEGORY")
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
     }
 
     @Basic
@@ -72,7 +61,6 @@ public class AwardEntity {
         AwardEntity that = (AwardEntity) o;
 
         if (id != that.id) return false;
-        if (category != null ? !category.equals(that.category) : that.category != null) return false;
         if (yearreceived != null ? !yearreceived.equals(that.yearreceived) : that.yearreceived != null) return false;
         if (status != null ? !status.equals(that.status) : that.status != null) return false;
         if (votes != null ? !votes.equals(that.votes) : that.votes != null) return false;
@@ -83,7 +71,6 @@ public class AwardEntity {
     @Override
     public int hashCode() {
         int result = (int) (id ^ (id >>> 32));
-        result = 31 * result + (category != null ? category.hashCode() : 0);
         result = 31 * result + (yearreceived != null ? yearreceived.hashCode() : 0);
         result = 31 * result + (status != null ? status.hashCode() : 0);
         result = 31 * result + (votes != null ? votes.hashCode() : 0);

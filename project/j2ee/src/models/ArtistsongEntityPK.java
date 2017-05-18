@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
- * Created by kr29 on 5/9/2017.
+ * Created by kr29 on 5/18/2017.
  */
 public class ArtistsongEntityPK implements Serializable {
     private long artistid;
