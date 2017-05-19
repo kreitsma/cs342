@@ -17,7 +17,6 @@ public class GetSortedAlbums {
         SortedSet<Integer> years = new TreeSet<>();
 
         Key key = Key.createKey(Arrays.asList("album"));
-        //Iterator to go through the store
         Iterator<KeyValueVersion> it = store.storeIterator(Direction.UNORDERED, 0, key, null, null);
 
             while (it.hasNext()) {

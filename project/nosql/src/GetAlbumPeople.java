@@ -15,9 +15,11 @@ public class GetAlbumPeople {
         KVStore store = KVStoreFactory.getStore(new KVStoreConfig("kvstore", "localhost:5000"));
         System.out.println("Table: album\nID: 1");
 
+        //Create Major Key path
         Key majorKeyPathOnly = Key.createKey(Arrays.asList("role", "1"));
         Map<Key, ValueVersion> fields = store.multiGet(majorKeyPathOnly, null, null);
         for (Map.Entry<Key, ValueVersion> field : fields.entrySet()) {
+            //Get name and value from minor path
             String fieldName = field.getKey().getMinorPath().get(0);
             String fieldValue = new String(field.getValue().getValue().getValue());
             System.out.println("\t" + fieldValue + "\t " + getPerson(fieldValue) + ":\t " + fieldName);
@@ -26,6 +28,7 @@ public class GetAlbumPeople {
         store.close();
     }
 
+    //Get person
     public static String getPerson(String personId) {
         KVStore store = KVStoreFactory.getStore(new KVStoreConfig("kvstore", "localhost:5000"));
         String name = new String();
