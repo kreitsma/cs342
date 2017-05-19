@@ -51,16 +51,15 @@ create table Award (
 	AlbumID integer,
 	SongID integer,
 	ArtistID integer,
-	FOREIGN KEY (category) REFERENCES AwardTypes(name) ON DELETE SET NULL,
+	FOREIGN KEY (category) REFERENCES AwardTypes(name) ON DELETE SET NULL, --Don't lose the Award record if the category is removed, just in case...
 	FOREIGN KEY (AlbumID) REFERENCES Album(ID) ON DELETE CASCADE,
 	FOREIGN KEY (SongID) REFERENCES Song(ID) ON DELETE CASCADE,
 	FOREIGN KEY (ArtistID) REFERENCES Artist(ID) ON DELETE CASCADE,
 	CHECK (yearReceived > 1900 AND yearReceived < 2018),
-	CONSTRAINT st CHECK (status IN ('winner', 'nominee'))
+	CONSTRAINT st CHECK (status IN ('winner', 'nominee')) --Did constraint instead of legal value table, as this list should be immutable
 	);
 	
---Intermediary tables
-	
+--Intermediary tables	
 create table AlbumLabel (
 	AlbumID integer,
 	LabelID integer NOT NULL,
